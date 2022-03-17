@@ -419,7 +419,8 @@ const siguienteRonda = () => {
 
                 document.body.style.backgroundColor = "#118ab2";
             
-                zonaNombre.innerHTML += `<div class="seccion-nombre" id="texto-nombre">
+                zonaNombre.innerHTML += `<div class="jugador-cara"></div>
+                <div class="seccion-nombre" id="texto-nombre">
                 <h1>${jugadorRonda}</h1>
                 </div>`
             
@@ -464,7 +465,7 @@ const siguienteRonda = () => {
                 let randomTragos = Math.floor((Math.random()*3)+1); //Sumandole uno evito que salgan cero tragos
                 let randomEleccion = Math.floor(Math.random()*eleccion.length);
                 let randomConvencer = Math.random() < 0.25
-                console.log("Random convencer es "+randomConvencer)
+                
                 juegoRonda = eleccion[randomEleccion];
 
                 document.body.style.backgroundColor = "#ffd166";
