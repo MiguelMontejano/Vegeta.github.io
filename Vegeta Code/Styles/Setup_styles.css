@@ -1,0 +1,324 @@
+.cuerpo{
+    width: 100%;
+    margin-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: larger;
+    font-weight: 800;
+}
+
+.contenedor-form{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentacion-juego{
+    width: 100%;
+    font-size: 1.2vw;
+    text-align: center;
+    margin-bottom: 2vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select{
+    display: block;
+	font-size: 16px;
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+	line-height: 1.3;
+	padding: .4em 1.4em .3em .8em;
+	width: 100%;
+	max-width: 100%; 
+	box-sizing: border-box;
+    margin: 20px auto;
+	border: 1px solid #073b4c;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+	border-radius: .3em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+	  linear-gradient(to bottom, #ffffff 0%,#f7f7f7 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%;
+}
+
+.select:focus{
+    background-image: none;
+    size: 2;
+}
+
+.select:hover {
+	border-color: #00222e;
+}
+
+/*Checkbox*/
+.contenedor-switch {
+    position: relative;
+    display: inline-block;
+}
+
+.switch-caliente {
+    display: none;
+}
+
+.caliente-label {
+    display: block;
+    width: 2.6vw;
+    height: 1.25vw;
+    font-size: 1vw;
+    text-indent: -330%;
+    user-select: none;
+}
+
+.caliente-label::before,
+.caliente-label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.caliente-label::before {
+    width: 100%;
+    height: 100%;
+    background-color: #dedede;
+    border-radius: 9999em;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+}
+
+.caliente-label::after {
+    top: 0;
+    left: 0;
+    width: 1.25vw;
+    height: 1.25vw;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease;
+}
+
+.switch-caliente:checked + .caliente-label::before {
+    background-color: #ef476f;
+}
+
+.switch-caliente:checked + .caliente-label::after {
+    left: 1.25vw;
+}
+/*Checkbox*/
+
+button, input, select, textarea {
+    font-family : inherit;
+    font-size   : 100%;
+}
+
+.brmedium {
+    display: block;
+    margin-bottom: 1vw;
+}
+
+input[type=text]{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    width: 40vw;
+    font-weight: 500;
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255, 255, 255, 0.76);
+    opacity: 1; /* Firefox */
+}
+
+input:focus::placeholder { /*Oculto el texto del placeholder cuando se hace focus*/
+    color: transparent;
+}
+
+input[type=submit]{
+    background-color: transparent;
+    border: 4px solid white;
+    border-radius: 2vw;
+    cursor: pointer;
+    color: white;
+    padding: 1vw 1.4vw 1vw 1.4vw;
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+input[type=submit]:hover{
+    background-color: white;
+    color: var(--color-azulclaro);
+}
+
+.contenedor-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-tarjetas{
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+}
+
+.tarjetas-jugador{
+    /*width: 40%;*/
+    height: 90%;
+    background-color: var(--color-azuloscuro);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vw;
+    border-radius: 10%;
+    overflow: hidden;
+   /* background-image: url(../Images/xo.jpg);*/
+    background-size: cover;
+    transition: all ease 0.5s;
+}
+
+.nombre-tarjeta{
+    width: 100%;
+    height: 2vw;
+    font-size: 1vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.4vw;
+    background-color: rgba(0, 0, 0, 0.63);
+}
+
+.iconos-vasos{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start; /*Para que se alinee el solo a la izquierda*/
+    margin-left: 0.5vw;
+    margin-top: 3.1vw;
+}
+
+.fa-cocktail{
+    margin-right: 0.5vw;
+    padding-top: 0.2vw;
+}
+
+.fa-plus{
+    cursor: pointer;
+    width: 50%;
+    display: flex;
+    text-align: center;
+    padding-top: 0.6vw;
+    background-color: rgba(255, 255, 255, 0.233);
+}
+
+.fa-plus:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.iconos-abajo{
+    width: 100%;
+    height: 27%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.fa-times{
+    color: var(--color-rosado);
+    cursor: pointer;
+}
+
+.cruz-tarjetas{
+    width: 50%;
+    display: flex;
+    text-align: center;
+    padding-top: 0.6vw;
+    background-color: #f8154a42;
+}
+
+.cruz-tarjetas:hover{
+    background-color: #fa174ccc;
+    color: white;
+}
+
+.contenedor-btn-iniciar{
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-empezar{
+    margin-bottom: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    width: 8vw;
+    height: 1.5vw;
+    padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+    font-size: 1vw;
+    font-weight: bold;
+    color: white;
+    background-color: var(--color-azuloscuro);
+    cursor: pointer;
+    border: none;
+    transition: .3s ease all;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-empezar:hover{
+    color: black;
+}
+
+.btn-empezar span{
+    position: relative;
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.btn-empezar::after{
+    content: "";
+    width: 150%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    top: 80px;
+    /*left: 0;*/
+    transition: .3s ease-in-out all;
+}
+
+.btn-empezar:hover::after{
+    top: 0px;
+}
+
+.contenedor-version{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-left: 0.3vw;
+}

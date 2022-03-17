@@ -1,0 +1,50 @@
+:root{
+    /*Aqui establezco los colores o variables globales*/
+    --color-rosado: #ef476f;
+    --color-amarillo: #ffd166;
+    --color-verde: #06d6a0;
+    --color-azulclaro: #118ab2;
+    --color-azuloscuro: #073b4c;
+    --color-azulcielo: #0068c9;
+    --color-negro: #222222;
+
+}
+
+html{ 
+	height: 100%;
+	width: 100%;
+	margin:0;
+}
+
+body{ 
+    background-color: var(--color-azulclaro);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+header{
+    height: 4vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2.5vw;
+    font-family: 'Bowlby One SC', cursive;
+    padding-top: 1vw;
+    color: white;
+}
+
+.titulo-header{
+    cursor: pointer;
+}
+
+.contenedor-icono-menu{
+    padding-left: 1vw;
+    cursor: pointer;
+}
+
+.contenedor-icono-ayuda{
+    padding-right: 1vw;
+    cursor: pointer;
+}

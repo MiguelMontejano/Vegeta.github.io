@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Images/favicon/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="../Styles/header.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/Home_styles.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/ventanaModal.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/menuLateral.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+
+    <!--Instalando Flickity para el carousel-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</head>
+
+<header>
+    <div class="contenedor-icono-menu">
+        <i class="fas fa-bars" id="btn-menu"></i>
+    </div>
+    
+    <div class="titulo-header" onclick="redirigirSetup()">Hoy No Bebo</div>
+
+    <div class="contenedor-icono-ayuda">
+        <i class="fas fa-question" id="btn-ayuda"></i>
+    </div>
+</header>
+
+<div id="menu-lateral" class="menu-lateral">
+    <a href="javascript:void(0)" class="closebtn" onclick="cerrarMenu()"><i class="fas fa-times"></i></a>
+    <a href="SobreNosotros.html">Sobre Nosotros</a>
+    <a href="Legal.html">Legal</a>
+    <a href="NotasVersion.html">Notas de la Versión</a>
+</div>
+
+<div class="cuerpo" id="cuerpo-app">
+
+    <div class="seccion-nombre" id="texto-nombre">
+        <!--AQUI SE INSERTA EL NOMBRE DEL JUGADOR-->
+    </div>
+
+    <div class="seccion-texto" id="texto-juego">
+       <!--AQUI SE INSERTA EL TEXTO DE LA PRUEBA-->
+    </div>
+</div>
+
+<div id="VentanaModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="cerrar-pop-up"><i class="fas fa-times"></i></span>
+        <h2 class="modal-titulo">📌 ¿Cómo jugar?</h2>
+        <p class="modal-texto">Las normas son muy sencillas y están resumidas paso a paso a continuación:</p>
+            <ul class="lista-normas">
+                <li>Lo primero de todo será introducir los nombres de los jugadores uno a uno en la sección habilitada para ello y hacer click en Añadir o darle a Enter (no seáis aburridos y poneros nombres guays que para usar los vuestros ya tenéis el resto de la vida, os recomendamos que os pongáis nombres de superhéroes, futbolistas... ¡Sed creativos!).</li>
+                <li>Como véis los nombres añadidos aparecen en la parte inferior de la pantalla. Junto con los nombres veréis tres iconos:</li>
+                <ul>
+                    <li>❌ El icono rojo con la cruz sirve para eliminar un jugador.</li>
+                    <li>➕ El icono con el símbolo de suma sirve para añadir un vaso al jugador (continúa leyendo las instrucciones para comprender para que sirve esto).</li>
+                    <li>🍸 El icono del cóctel está al lado del número que indica los vasos que lleva ese jugador.</li>
+                </ul>
+                <li>¡PERFECTO! 🎉, ahora aseguraros de que todos tenéis vuestra bebida/cóctel preferida servida (en caso de ser alcóholica bebe con moderación y en el momento que lo desées deja de hacerlo, vuestra salud es lo prioritario)</li>
+                <li>El objetivo del juego es pasarlo genial con tus amigos, para esto nosotros ponemos las pruebas y vosotros la música &#127925; (que siempre haya temazos de fondo os lo pedimos por favor).</li>
+                <li>Las pruebas os indicarán los retos/juegos/tonterías (sobre todo tonterías) que tendréis que hacer y los tragos que deberéis beber o repartir (están todas muy bien explicadas no os preocupéis)</li>
+                <li>Según vayan avanzando las rondas editar los vasos que lleváis cada uno y el que más tenga 🏅 al inicio/final de cada ronda repartíra en tragos el número de participantes que estén jugando.</li>
+                <li>Ahora es el momento de que pruebes a jugar una partida y vayas entendiendo como va el juego. Esperamos que te encante.</li>
+            </ul>
+            <div class="contenedor-gif">
+                <img src="../Images/DanceMonkey.gif" alt="funny-gif" class="gif-modal">
+            </div>
+        </div>
+</div>
+
+<script src="../Scripts/game.js"></script>
+<script src="../Scripts/popup.js"></script>
+<script src="../Scripts/menu.js"></script>
+<script src="../Scripts/Redirecciones.js"></script>
+
+</html>
