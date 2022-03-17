@@ -413,13 +413,19 @@ const siguienteRonda = () => {
             if(contadorPruebas <= 8){  
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorPruebas++;
-                let jugadorRonda = seleccionarJugador(1);
+                let objetoRonda = seleccionarJugador(1);
+                let jugadorRonda = objetoRonda.jugador
+                let personaje = objetoRonda.personaje
+                console.log(jugadorRonda, personaje);
+
                 let randomPrueba = Math.floor(Math.random()*pruebas.length);
                 juegoRonda = pruebas[randomPrueba];
 
                 document.body.style.backgroundColor = "#118ab2";
             
-                zonaNombre.innerHTML += `<div class="jugador-cara"></div>
+                /*Que me devuelva la imagen el metodo que me devuelve el jugador, en un objeto que tenga un atributo que sea el araay jugaodres y otro que sean las imagenes*/
+
+                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
                 <div class="seccion-nombre" id="texto-nombre">
                 <h1>${jugadorRonda}</h1>
                 </div>`
@@ -494,13 +500,19 @@ const siguienteRonda = () => {
             if(contadorDuelos <= 5){ 
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorDuelos++;
-                let jugadorRonda = seleccionarJugador(2);
+                let objetoRonda = seleccionarJugador(2);
+                let jugadorRonda = objetoRonda.jugador
+                let personaje = objetoRonda.personaje
                 let randomDuelo = Math.floor(Math.random()*duelos.length);
                 juegoRonda = duelos[randomDuelo];
 
                 document.body.style.backgroundColor = "#ef476f";
             
-                zonaNombre.innerHTML += `<div class="seccion-nombre" id="texto-nombre">
+                zonaNombre.innerHTML += `<div class="caras-duelos">
+                <div class="jugador-cara" style="background-image:url(../Images/${personaje[0]});"></div>
+                <div class="jugador-cara" style="background-image:url(../Images/${personaje[1]});"></div>
+                </div>
+                <div class="seccion-nombre" id="texto-nombre">
                 <h1>${jugadorRonda[0]} y ${jugadorRonda[1]}</h1>
                 </div>`
     
@@ -520,14 +532,17 @@ const siguienteRonda = () => {
             if(contadorCastigos <= 4){ 
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorCastigos++;
-                let jugadorRonda = seleccionarJugador(1);
+                let objetoRonda = seleccionarJugador(1);
+                let jugadorRonda = objetoRonda.jugador
+                let personaje = objetoRonda.personaje
                 let randomCastigo = Math.floor(Math.random()*castigos.length);
                 juegoRonda = castigos[randomCastigo];
 
                 document.body.style.backgroundColor = "#222222";
             
-                zonaNombre.innerHTML += `<div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda[0]}</h1>
+                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                <div class="seccion-nombre" id="texto-nombre">
+                <h1>${jugadorRonda}</h1>
                 </div>`
             
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
@@ -546,14 +561,17 @@ const siguienteRonda = () => {
             if(contadorPreguntas <= 3){ 
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorPreguntas++;
-                let jugadorRonda = seleccionarJugador(1);
+                let objetoRonda = seleccionarJugador(1);
+                let jugadorRonda = objetoRonda.jugador
+                let personaje = objetoRonda.personaje
                 let randomPregunta = Math.floor(Math.random()*preguntas.length);
                 juegoRonda = preguntas[randomPregunta];
 
                 document.body.style.backgroundColor = "#118ab2";
             
-                zonaNombre.innerHTML += `<div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda[0]}</h1>
+                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                <div class="seccion-nombre" id="texto-nombre">
+                <h1>${jugadorRonda}</h1>
                 </div>`
     
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
@@ -572,15 +590,18 @@ const siguienteRonda = () => {
             if(contadorCultura <= 2){ 
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorCultura++;
-                let jugadorRonda = seleccionarJugador(1);
+                let objetoRonda = seleccionarJugador(1);
+                let jugadorRonda = objetoRonda.jugador
+                let personaje = objetoRonda.personaje
                 let randomCultura = Math.floor(Math.random()*cultura.length);
                 juegoRonda = cultura[randomCultura];
 
                 document.body.style.backgroundColor = "#0068c9";
             
-                zonaNombre.innerHTML += `<div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda[0]}</h1>
-                </div>`
+                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                <div class="seccion-nombre" id="texto-nombre">
+                <h1>${jugadorRonda}</h1>
+                </div>` 
             
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
                 <h1>${juegoRonda}</h1>
@@ -627,13 +648,18 @@ const siguienteRonda = () => {
 
 const seleccionarJugador = (numeroJugadores) => {//Esta funcion selecciona tantos jugadores como se le indique por parametro
     let jugadoresRonda = [];
+    let imagenesRonda = []
     for (let i = 0; jugadoresRonda.length < numeroJugadores; i++) {
         randomJugador = Math.floor(Math.random()*arrayJugadores.length);
         if(jugadoresRonda.includes(arrayJugadores[randomJugador].nombre) != true)
         jugadoresRonda.push(arrayJugadores[randomJugador].nombre);
+        imagenesRonda.push(arrayJugadores[randomJugador].personaje)
     }
     
-    return jugadoresRonda;
+    return {
+        jugador: jugadoresRonda, 
+        personaje:imagenesRonda
+        };
 }
 
 //Event Listener
