@@ -336,7 +336,7 @@ let cultura = ["Número de habitantes en el lugar en el pueblo/ciudad en el que 
 "¿Cómo se llama el fundador de Zara? Si fallas bebes 1.",
 "¿Cuál es la capital de Islandia? Reparte 5 si sabes la respuesta",
 "¿De qué año a qué año transcurrió la Segunda Guerra Mundial?, si aciertas reparte 1, si fallas bébelo",
-"¿Quién es el autor del cuadro La Última Cena",
+"¿Quién es el autor del cuadro La Última Cena?",
 "¿Cuál es el océano más grande de La Tierra?, 2 tragos en juego",
 "¿Cuántos colores tiene la bandera de Bulgaria? Si has acertado reparte 3",
 "¿Cuántos colores tiene la bandera de Chile? Si has acertado reparte 3",
@@ -362,12 +362,12 @@ let cultura = ["Número de habitantes en el lugar en el pueblo/ciudad en el que 
 "Cuál es el nombre del autor español de las obras La casa de Bernarda Alba y Bodas de Sangre que murió fusilado tras la Guerra Civil Española. reparte 3 si lo aciertas."
 ];
 
-let beberxbeber = ["Prefieres Tobbey Mcguire, Andrew Garfield o Tom Holland, lector espera a las respuestas, si tu favorito es Tom 5 tragos, si es Tobbey 3 tragos si es Andrew 1 trago , lo reconocemos somos muy fans", 
-"Reparte 5 tragos si eres el que  siempre lleva a la gente de tu grupo en coche", 
+let beberxbeber = ["Reparte 5 tragos si eres el que  siempre lleva a la gente de tu grupo en coche", 
 "Bebed tantos tragos como número de mes hayáis nacido cada uno",
 "Repartid cada uno el segundo dígito de los minutos de la hora que sea actualmente",
 "Gira una botella y al que apunte el tapón deberá beber un chupito",
 "Todos beben 2 tragos",
+"Prefieres Tobbey Mcguire, Andrew Garfield o Tom Holland, lector espera a las respuestas, si tu favorito es Tom 5 tragos, si es Tobbey 3 tragos si es Andrew 1 trago , lo reconocemos somos muy fans", 
 "Un brindis por todos los que no están, os echamos de menos", 
 "TODOS REPARTEN 2 TRAGOS",
 "Silencio todo el mundo, comienza el juego de las bodas, todos podeis hacer una propuesta de matrimonio a otro jugador, este podrá aceptarla o no, si la rechaza deberás beber 2 tragos para ahogar las penas, si acepta debeis besaros (pico) y el resto beberá 5 tragos",
@@ -423,7 +423,6 @@ const siguienteRonda = () => {
                 let objetoRonda = seleccionarJugador(1);
                 let jugadorRonda = objetoRonda.jugador
                 let personaje = objetoRonda.personaje
-                console.log(jugadorRonda, personaje);
 
                 let randomPrueba = Math.floor(Math.random()*pruebas.length);
                 juegoRonda = pruebas[randomPrueba];
@@ -515,8 +514,6 @@ const siguienteRonda = () => {
 
                 document.body.style.backgroundColor = "#ef476f";
 
-                console.log(jugadorRonda[0], jugadorRonda[1], personaje[0], personaje[1]);
-            
                 zonaNombre.innerHTML += `<div class="caras-duelos">
                 <div class="jugador-cara" style="background-image:url(../Images/${personaje[0]});"></div>
                 <div class="jugador-cara" style="background-image:url(../Images/${personaje[1]});"></div>
