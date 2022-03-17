@@ -114,6 +114,7 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "El porcentaje de batería más alto bebe 1 tragos", 
 "El porcentaje de batería más bajo bebe 2 tragos",
 "Los que lleven reloj beben 1 trago",
+"Olvidonas... Decid frases cutres para ligar, el que se quede sin ideas o repita bebe 2. A por ello fornicadores",
 "Decid refranes populares. El que se quede sin ideas bebe 3 tragos. Empieza el lector de esta prueba",
 "Hola vaqueros alcohólicos, ahora todos tendréis un revólver cargado con tantas balas como copas llevéis en el día de hoy. Cada bala que disparéis hará que beba la persona a la que apuntes un trago. Úsenlas bien.",
 "Jugar a chinitos entre todos y al que le toque repartirá la suma total de dedos (no vale sacar más de 5 dedos)",
@@ -123,6 +124,7 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "Esta es para los viejos V2. Por cada uno de los siguientes recursos que hayas usado beberás un trago: Musical.ly, Messenger, Playfulbet, JuegosJuegos.com, Flappy Bird",
 "Si has fantaseado con un profesor bebe 2 tragos",
 "Decir todos una canción y añadirla a la cola",
+"Decid superpoderes que sean muy útiles tanto en tu trabajo como en la cama, el que repita o se quede sin ideas bebe 1 trago",
 "Si tienes Spotify gratis bebe 2 por pobre, si lo tienes de pago reparte 2, si lo tienes pirata reparte 1 por pícaro",
 "Los que tienen Amazon Prime reparten 1 trago, si pides con el de un familiar no cuenta",
 "Di tu Pokémon favorito, si coincides con otro bebéis 2 tragos",
@@ -139,6 +141,7 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "Si prefieres kebab reparte 2, si eres de durum reparte 1.",
 "El más bajo bebe 2, tapón",
 "El más inteligente bebe 2",
+"Cosas que echamos de menos de la infancia o que eran mejores en ese tiempo, el que repita o se quede sin ideas que beba 2 tragos para volver a la niñez",
 "Qué recibe mayor número de búsquedas en Google: Obesidad o Divorcios. Cada cual diga su respuesta y luego busquen la respuesta. Los que han fallado beben",
 "¿Quién va mejor vestido/a hoy, la persona de tu izquierda o de tu derecha? Mójate y cada cual beberá un trago por cada persona que le haya dicho que viste mejor (como mucho puedes beber dos en esta ronda asi que no te quejes)",
 "Reparte 2 tragos si has ido a más de 4 conciertos",
@@ -280,41 +283,40 @@ let castigos = ["Cambiaros todos de sitio, deberá ser durante toda la noche, el
 "Elimina 5 aplicaciones de tu teléfono o bebe 10 tragos",
 "Publica en la red social que quieras algo con temática elegida por el resto. Si es Instagram puedes subir una historia, si prefieres puedes poner un tweet, eso es elección tuya.",
 "Eres Bizarrap, busca una gorra y unas gafas y póntelas hasta que el resto de jugadores diga, si no encuentras tapate con lo que pilles.",
-"Olvidonas... Hasta el final del juego todos vais a mantener tono de seductor y a introducir frases cutres de sexo o para ligar. A por ello fornicadores",
 "Hola jugón, estoy encantadísimo de comunicarte que vas a exagerar todo lo que digas durante 10 ronditas. El resto vigilad que será un trago por cada falta.",
 "De aquí al final del juego deberás acabar tus frases con algo que no tenga sentido.",
 "No podrás parpadear durante 1 minuto",
 ];
 
 let preguntas = ["¿Qué es lo último de lo que te arrepientes? Tienes la oportunidad de enmendarlo si es posible (Por atreverte reparte 4 tragos)", 
-"Cuál es tú película favorita, si coincides con otro bebes",
+"Cuál es tú película favorita, un trago por cada uno que la haya visto",
 "¿Cuál es tu videojuego favorito, si otro de los presentes lo ha jugado bebe 1 trago?", 
 "Bebe si te gustaría que no estuviese alguien de los aquí presentes",
-"¿Cuál  dirías que es tu mayor debilidad? Bebe 2",
 "¿Cuál es tu canción favorita? Responde y ponedla para que todo el mundo la disfrute",
-"Si pudieras tener un superpoder, ¿cuál sería? Reparte 1", 
-"¿En qué momento de tu vida has pasado más vergüenza? Bebe 1", 
-"Si solo pudieras escuchar a un cantante o grupo durante el resto de tu vida, ¿cuál sería? Bebe 2", 
+"¿En qué momento de tu vida has pasado más vergüenza? Si hay pruebas muéstralas y además bebe 1", 
+"Si solo pudieras escuchar a un cantante o grupo durante el resto de tu vida, ¿cuál sería? Si a alguno no le gusta que beba un trago", 
 "Si no hubiera leyes durante un día... ¿qué 3 cosas harías con mayor prioridad? bebe 2, si te has pasado demasiado bebe 5 y vuelve al mundo real", 
 "Si pudieras ser un famoso durante un día, ¿qué famoso serías? Bebe 1", 
-"Si supieras cuándo vas a morir, ¿cambiarías tu forma de vivir? Bebe 1", 
-"¿Qué es lo que más echas de menos de tu infancia? Bebe 2", 
+"Si supieras cuándo vas a morir, ¿cambiarías tu forma de vivir? Bebe 1",
 "¿Qué es lo que más miedo te da? Bebe 2",
-"¿Tienes algún miedo que no le hayas contado a nadie? Bebe 2",
+"¿Tienes algún miedo que no le hayas contado a nadie? Si es así bebe 2",
 "Si pudieras pedir un deseo ahora mismo, ¿cuál sería? Bebe 2",
-"¿Qué comerías en tu última cena? Reparte 2",
+"¿Cuántas veces has comido verdura esta semana? Si es menos de 3 bebe 3 tragos",
 "Si fueses un animal… ¿cuál serías? Reparte los tragos que acuerdes con el resto en función de lo alpha que sea ese animal",
-"¿Qué es lo que echas más de menos de tu infancia?",
 "¿Quién te ha influenciado más en la vida? Bebe 2",
+"¿Con quién de los aquí presentes harías un trío? Brindad por ello",
+"¿Quién de los aquí presentes dirías que es el más fuerte? Brinda con él con 2 traguitos",
 "¿Dónde te irías con los aquí presentes a pasar unos días? Todos beben 2",
 "¿Qué es lo que más te aburre? Bebe 1 para animarte",
-"¿Cuál es tu serie de televisión preferida? Bebe 2",
-"¿Qué comida no probarías jamás? Bebe 2",
+"¿Cuál es tu serie de televisión preferida? Si alguien la ha visto que beba",
+"¿Qué comida no probarías jamás? Bebe 2 si a alguno de los aquí presentes le encanta esa comida",
+"Por 10.000€ ¿Chuparías el pene/vagina de la persona de tu derecha?. Si la respuesta es sí brinda con esa persona y empezad a plantearlo",
+"¿Quién sería la última de las personas presentes que dejarías que cocinase para tí? Brindad por ello ambos",
 "Si te abrieses Onlyfans ¿Qué precio pondrías teniendo en cuenta que subirías fotos desnudo/a? Si alguno de los presentes pagaría por verte que beba 1 trago",
 "¿Cuál es la historia más vergonzosa en donde has vomitado? Reparte 2",
-"Pregunta profunda, responded hacia la derecha empezando por tí razonando por qué. ¿La muerte le da sentido a la existencia o se la quita?. Los que estéis de acuerdo entre vosotros brindad",
 "¿Has llorado viendo alguna película, cuál? Nadie bebe en esta ronda.",
 "Si solo pudieses llevar un conjunto de ropa puesto ¿Cuál sería?",
+"¿Cuántas veces has ido a mear hoy? Bebe una vez por cada una"
 ];
 
 let cultura = ["Número de habitantes en el lugar en el pueblo/ciudad en el que vives, si te acercas 1.000.000 arriba o abajo te libras de beber si no bebe 3",
@@ -507,6 +509,8 @@ const siguienteRonda = () => {
                 juegoRonda = duelos[randomDuelo];
 
                 document.body.style.backgroundColor = "#ef476f";
+
+                console.log(jugadorRonda[0], jugadorRonda[1], personaje[0], personaje[1]);
             
                 zonaNombre.innerHTML += `<div class="caras-duelos">
                 <div class="jugador-cara" style="background-image:url(../Images/${personaje[0]});"></div>
@@ -646,20 +650,23 @@ const siguienteRonda = () => {
     
 }
 
-const seleccionarJugador = (numeroJugadores) => {//Esta funcion selecciona tantos jugadores como se le indique por parametro
+const seleccionarJugador = (numeroJugadores) => {//Esta funcion selecciona tantos jugadores como se le indique por parametro, se ejecuta arriba en donde se inserta en la zona por eso los prints a veces muestran que el array tiene elementos que quizas no deberian verse
     let jugadoresRonda = [];
     let imagenesRonda = []
     for (let i = 0; jugadoresRonda.length < numeroJugadores; i++) {
         randomJugador = Math.floor(Math.random()*arrayJugadores.length);
-        if(jugadoresRonda.includes(arrayJugadores[randomJugador].nombre) != true)
-        jugadoresRonda.push(arrayJugadores[randomJugador].nombre);
-        imagenesRonda.push(arrayJugadores[randomJugador].personaje)
+        
+        if(jugadoresRonda.includes(arrayJugadores[randomJugador].nombre) === false){   
+            imagenesRonda.push(arrayJugadores[randomJugador].personaje)
+            jugadoresRonda.push(arrayJugadores[randomJugador].nombre);
+        }
+
     }
     
     return {
         jugador: jugadoresRonda, 
-        personaje:imagenesRonda
-        };
+        personaje: imagenesRonda
+    }
 }
 
 //Event Listener
