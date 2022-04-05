@@ -287,7 +287,9 @@ let castigos = ["Cambiaros todos de sitio, deberá ser durante toda la noche, el
 "Todos deberéis dirigiros hacia quién habléis de manera despectiva. Daros caña un rato y un trago por cada falta.",
 "2 Minutos sin apoyar el vaso en la mesa",
 "Publica en la red social que quieras algo con temática elegida por el resto. Si es Instagram puedes subir una historia, si prefieres puedes poner un tweet, eso es elección tuya.",
-"Si tu vaso está a menos de la mitad debes acabarlo, el resto comprobadlo"
+"Si tu vaso está a menos de la mitad debes acabarlo, el resto comprobadlo",
+"De aquí al final de la partida vas a hablar únicamente utilizando la vocal que decida el resto. Un trago por cada falta",
+"De aquí a 5 rondas hablarás en tercera persona sobre ti mismo. Por ejemplo Julían en lugar de decir quiero agua debe decir Julian dice que quiere agua. Un trago por cada fallo"
 ];
 
 let preguntas = ["¿Qué es lo último de lo que te arrepientes? Tienes la oportunidad de enmendarlo si es posible (Por atreverte reparte 4 tragos)", 
