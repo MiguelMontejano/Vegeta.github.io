@@ -7,8 +7,7 @@
     align-items: center;
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-size: 1.2vw;
-
+    font-size: 2vw;
 }
 
 .seccion-texto{
@@ -43,10 +42,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    width: 12vw;
-    height: 1.5vw;
+    width: 18vw;
+    height: 5vw;
     padding: 1.4vw 1.8vw 1.4vw 1.8vw;
-    font-size: 1vw;
+    margin-bottom: 2vh;
+    font-size: 2vw;
     font-weight: bold;
     color: white;
     background-color: var(--color-azuloscuro);
@@ -82,3 +82,22 @@
     top: 0px;
 }
 
+
+.fa-times {
+    color: var(--color-rosado);
+    cursor: pointer;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .cuerpo, .contenido {
+        font-size: 2.4vh;
+    }
+
+    .btn-empezar{
+        border-radius: 50px;
+        width: 40vw;
+        height: 10vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 1.5vh;
+    }
+}

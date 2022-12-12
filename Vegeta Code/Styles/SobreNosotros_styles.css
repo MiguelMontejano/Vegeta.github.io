@@ -27,20 +27,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 2.5vw;
 }
 
 .separador{
     width: 4vw;
     height: 0.35vw;
-    background-color: white;
-    
+    background-color: white; 
 }
 
 .redes-sociales-contenedor, .paypal-contenedor{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 3vw;
+    font-size: 8vw;
 }
 
 .fa-instagram, .fa-twitter, .fa-paypal{
@@ -85,10 +85,11 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    width: 12vw;
-    height: 1.5vw;
+    width: 18vw;
+    height: 5vw;
     padding: 1.4vw 1.8vw 1.4vw 1.8vw;
-    font-size: 1vw;
+    margin-bottom: 2vh;
+    font-size: 2vw;
     font-weight: bold;
     color: white;
     background-color: var(--color-azuloscuro);
@@ -122,4 +123,35 @@
 
 .btn-empezar:hover::after{
     top: 0px;
+}
+
+.fa-times {
+    color: var(--color-rosado);
+    cursor: pointer;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .cuerpo, .contenido {
+        font-size: 2.4vh;
+    }
+
+    .paypal-contenedor, .redes-sociales-contenedor {
+        font-size: 8vh;
+        column-gap: 2vh;
+    }
+
+    .separador{
+        width: 4vh;
+        height: 0.35vh;
+        background-color: white; 
+        margin: 1vh 0 1vh 0;
+    }
+
+    .btn-empezar{
+        border-radius: 50px;
+        width: 40vw;
+        height: 10vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 1.5vh;
+    }
 }
