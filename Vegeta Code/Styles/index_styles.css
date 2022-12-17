@@ -35,6 +35,11 @@ header{
     color: white;
 }
 
+.titulo-pag {
+    font-size: 4vw;
+    font-weight: 700;
+}
+
 .cuerpo{
     width: 100%;
     margin-top: 2vw;
@@ -64,16 +69,16 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 3vw;
 }
 
 .contenedor-iconos{
-    font-size: 3vw;
+    font-size: 6vw;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    column-gap: 3vw;
+    column-gap: 5vw;
 }
 
 .fa-chrome{
@@ -103,9 +108,10 @@ header{
     align-items: center;
     border-radius: 50px;
     width: 18vw;
-    height: 2.5vw;
+    height: 5vw;
     padding: 1.4vw 1.8vw 1.4vw 1.8vw;
-    font-size: 1vw;
+    margin-bottom: 2vh;
+    font-size: 2vw;
     font-weight: bold;
     color: white;
     background-color: var(--color-azuloscuro);
@@ -139,4 +145,28 @@ header{
 
 .btn-empezar:hover::after{
     top: 0px;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .titulo-pag {
+        font-size: 3vh;
+        font-weight: 700;
+    }
+
+    .contenido {
+        font-size: 2.4vh;
+    }
+
+    .contenedor-iconos {
+        font-size: 5vh;
+        column-gap: 4vh;
+    }
+
+    .btn-empezar{
+        border-radius: 50px;
+        width: 45vw;
+        height: 14vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 2.5vh;
+    }
 }

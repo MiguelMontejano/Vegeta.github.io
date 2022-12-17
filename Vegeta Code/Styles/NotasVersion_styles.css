@@ -44,8 +44,7 @@ header{
     align-items: center;
     font-family: 'Poppins', sans-serif;
     color: white;
-    font-size: 1.2vw;
-
+    font-size: 2vw;
 }
 
 .seccion-texto{
@@ -133,9 +132,10 @@ header{
     align-items: center;
     border-radius: 50px;
     width: 18vw;
-    height: 2.5vw;
+    height: 5vw;
     padding: 1.4vw 1.8vw 1.4vw 1.8vw;
-    font-size: 1vw;
+    margin-bottom: 2vh;
+    font-size: 2vw;
     font-weight: bold;
     color: white;
     background-color: var(--color-azuloscuro);
@@ -169,4 +169,43 @@ header{
 
 .btn-empezar:hover::after{
     top: 0px;
+}
+
+.fa-times {
+    color: var(--color-rosado);
+    cursor: pointer;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .notas-version {
+        margin-top: 3vh;
+        font-size: 3.5vh;
+        font-weight: 700;
+    }
+
+    .cuerpo{
+        font-size: 2.4vh;
+    }
+
+    .img-presentacion{
+        width: 38vh;
+    }
+
+    .redes-sociales-contenedor{
+        font-size: 8vh;
+        column-gap: 2vh;
+    }
+
+    .contenedor-btn-iniciar{
+        margin-top: 1vw;
+        margin-bottom: 2vw;
+    }
+    
+    .btn-empezar{
+        border-radius: 50px;
+        width: 45vw;
+        height: 14vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 2.5vh;
+    }
 }
