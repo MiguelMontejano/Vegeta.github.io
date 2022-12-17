@@ -444,7 +444,7 @@ const leerDB = () => {
     else{ //Existe algo en el local storage
         
         zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-        <h1>La partida está a punto de empezar, haz click en el texto o pulsa espacio cuando esté preparado</h1>
+        <div>La partida está a punto de empezar, haz click en el texto o pulsa espacio cuando esté preparado</div>
         </div>`
 
     }
@@ -473,7 +473,8 @@ const siguienteRonda = () => {
                 let personaje = objetoRonda.personaje
 
                 let randomPrueba = Math.floor(Math.random()*pruebas.length);
-                juegoRonda = pruebas[randomPrueba];
+                let juegoRonda = pruebas[randomPrueba];
+                console.log('einn?? ', juegoRonda);
 
                 document.body.style.backgroundColor = "#118ab2";
             
@@ -485,7 +486,7 @@ const siguienteRonda = () => {
                 </div>`
             
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 pruebas.splice(randomPrueba, 1);//Para que en una misma partida no salga dos veces la misma prueba
@@ -502,12 +503,12 @@ const siguienteRonda = () => {
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorGenerales++;
                 let randomGeneral = Math.floor(Math.random()*generales.length);
-                juegoRonda = generales[randomGeneral];
+                let juegoRonda = generales[randomGeneral];
 
                 document.body.style.backgroundColor = "#118ab2";
                 
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 generales.splice(randomGeneral, 1);//Para que en una misma partida no salga dos veces la misma prueba
@@ -526,19 +527,19 @@ const siguienteRonda = () => {
                 let randomEleccion = Math.floor(Math.random()*eleccion.length);
                 let randomConvencer = Math.random() < 0.25
                 
-                juegoRonda = eleccion[randomEleccion];
+                let juegoRonda = eleccion[randomEleccion];
 
                 document.body.style.backgroundColor = "#ffd166";
             
                 if(randomConvencer === true){ //Una de cada 4 veces saldrá lo de convencer
                     zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                    <h1>${juegoRonda}, ${randomTragos} tragos. Una vez se haya votado la minoría podrá argumentar para
-                    llevar a la mayoría a su terreno. En caso de conseguirlo la nueva minoría beberá lo que toque</h1>
+                    <div>${juegoRonda}, ${randomTragos} tragos. Una vez se haya votado la minoría podrá argumentar para
+                    llevar a la mayoría a su terreno. En caso de conseguirlo la nueva minoría beberá lo que toque</div>
                     </div>`
 
                 }else{
                     zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                    <h1>${juegoRonda}, ${randomTragos} tragos</h1>
+                    <div>${juegoRonda}, ${randomTragos} tragos</div>
                     </div>`
                 }
 
@@ -558,7 +559,7 @@ const siguienteRonda = () => {
                 let jugadorRonda = objetoRonda.jugador
                 let personaje = objetoRonda.personaje
                 let randomDuelo = Math.floor(Math.random()*duelos.length);
-                juegoRonda = duelos[randomDuelo];
+                let juegoRonda = duelos[randomDuelo];
 
                 document.body.style.backgroundColor = "#ef476f";
 
@@ -571,7 +572,7 @@ const siguienteRonda = () => {
                 </div>`
     
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 duelos.splice(randomDuelo, 1);//Para que en una misma partida no salga dos veces la misma prueba
@@ -590,7 +591,7 @@ const siguienteRonda = () => {
                 let jugadorRonda = objetoRonda.jugador
                 let personaje = objetoRonda.personaje
                 let randomCastigo = Math.floor(Math.random()*castigos.length);
-                juegoRonda = castigos[randomCastigo];
+                let juegoRonda = castigos[randomCastigo];
 
                 document.body.style.backgroundColor = "#222222";
             
@@ -600,7 +601,7 @@ const siguienteRonda = () => {
                 </div>`
             
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 castigos.splice(randomCastigo, 1);//Para que en una misma partida no salga dos veces la misma prueba
@@ -619,7 +620,7 @@ const siguienteRonda = () => {
                 let jugadorRonda = objetoRonda.jugador
                 let personaje = objetoRonda.personaje
                 let randomPregunta = Math.floor(Math.random()*preguntas.length);
-                juegoRonda = preguntas[randomPregunta];
+                let juegoRonda = preguntas[randomPregunta];
 
                 document.body.style.backgroundColor = "#118ab2";
             
@@ -629,7 +630,7 @@ const siguienteRonda = () => {
                 </div>`
     
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 preguntas.splice(randomPregunta, 1);//Para que en una misma partida no salga dos veces la misma prueba
@@ -648,7 +649,7 @@ const siguienteRonda = () => {
                 let jugadorRonda = objetoRonda.jugador
                 let personaje = objetoRonda.personaje
                 let randomCultura = Math.floor(Math.random()*cultura.length);
-                juegoRonda = cultura[randomCultura];
+                let juegoRonda = cultura[randomCultura];
 
                 document.body.style.backgroundColor = "#0068c9";
             
@@ -658,7 +659,7 @@ const siguienteRonda = () => {
                 </div>` 
             
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 cultura.splice(randomCultura, 1);//Para que en una misma partida no salga dos veces la misma prueba
@@ -675,12 +676,12 @@ const siguienteRonda = () => {
                 contadorRondas++; //Sumo uno al contador de rondas
                 contadorBeberxbeber++;
                 let randomBeber = Math.floor(Math.random()*beberxbeber.length);
-                juegoRonda = beberxbeber[randomBeber];
+                let juegoRonda = beberxbeber[randomBeber];
 
                 document.body.style.backgroundColor = "#06d6a0";
             
                 zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <h1>${juegoRonda}</h1>
+                <div>${juegoRonda}</div>
                 </div>`
     
                 beberxbeber.splice(randomBeber, 1);//Para que en una misma partida no salga dos veces la misma prueba

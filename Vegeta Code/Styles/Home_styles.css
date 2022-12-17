@@ -18,6 +18,7 @@
 }
 
 .caras-duelos{ /*Este div solo esta cuando ocurre un duelo, por lo que las caras tienen que estar al lado*/
+    margin-top: 2vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,12 +40,14 @@
 
 .seccion-texto{
     font-family: 'Poppins', sans-serif;
+    font-weight: 600;
     color: white;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: justify; 
+    font-size: 2.5vw; 
     min-height: 10vw;
 }
 
@@ -55,7 +58,7 @@
 
     .seccion-texto{
         text-align: justify;
-        font-size: 1.7vh; 
+        font-size: 3vh; 
         min-height: 10vw;
     }
 
