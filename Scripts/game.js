@@ -437,10 +437,10 @@ const leerDB = () => {
     //Ahora vamos a leer lo que viene del local storage y lo voy a almacenar en mi array para poder ir eligiendo a cada turno los jugadores
     arrayJugadores = JSON.parse(localStorage.getItem('partida')); //lo parseo de nuevo ya que es un JSON cuando esta almacenado
 
-    if(arrayJugadores === null){
+    if(arrayJugadores === null || arrayJugadores.length === 0 || arrayJugadores.length === 1) { //Redireccionamos al setup si solo hay un jugador o si no hay ninguno
         arrayJugadores = [];
-        alert("la lista de jugadores esta vacia.")
-    }//si solo hay un jugador lanzar alerta tambien y decir que es un borracho por querer jugar solo
+        window.location.href = "../Html/Setup.html";
+    }
     else{ //Existe algo en el local storage
         
         zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
