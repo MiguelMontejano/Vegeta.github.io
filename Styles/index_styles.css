@@ -182,3 +182,38 @@ header{
         top: 9vh;
     }
 }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+    header{
+        font-size: 3vw;
+    }
+
+    .titulo-pag {
+        margin-top: 3vh;
+        font-size: 3vw;
+        font-weight: 700;
+    }
+
+    .contenido {
+        font-size: 2.6vw;
+        row-gap: 4vh;
+    }
+
+    .contenedor-iconos {
+        font-size: 5vw;
+        column-gap: 4vw;
+    }
+
+    .btn-empezar{
+        border-radius: 50px;
+        width: 20vw;
+        height: 8vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 2.25vw;
+        margin-bottom: 8vw;
+    }
+
+    .btn-empezar::after{
+        top: 9vw;
+    }
+}

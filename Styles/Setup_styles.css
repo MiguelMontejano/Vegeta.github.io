@@ -465,3 +465,7 @@ input[type=submit]:hover{
         font-size: 1.5vw;
     }
 }
+
+@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+
+}
