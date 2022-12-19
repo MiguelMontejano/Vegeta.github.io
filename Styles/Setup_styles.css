@@ -467,5 +467,42 @@ input[type=submit]:hover{
 }
 
 @media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
+    .presentacion-juego{
+        margin-top: 6vw;
+        font-size: 2.8vw;
+        margin-bottom: 2vw;
+    }
 
+    input[type=submit]{
+        width: 16vw;
+        font-size: 3vw;
+        padding: 1vw 1.4vw 1vw 1.4vw;
+    }
+
+    .caliente-label {
+        width: 6vw;
+        height: 3vw;
+        font-size: 2.5vw;
+        text-indent: -350%;
+    }
+
+    .caliente-label::after {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    .switch-caliente:checked + .caliente-label::after {
+        left: 2.95vw;
+    }
+
+    .btn-empezar{
+        width: 22vw;
+        height: 9vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 3vw;
+    }
+
+    .btn-empezar::after{
+        top: 10vw;
+    }
 }

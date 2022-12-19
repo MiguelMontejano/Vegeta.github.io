@@ -124,6 +124,7 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "El primero en decir la hora reparte 3 tragos",
 "El porcentaje de batería más alto bebe 1 tragos", 
 "El porcentaje de batería más bajo bebe 2 tragos",
+"El último en haber mantenido relaciones sexuales reparte 3 tragos",
 "Los que lleven reloj beben 1 trago",
 "Por turnos decid nombres de jugadores de futbol, el que repita o se quede sin ideas beberá 2 tragos",
 "Nombres de discotecas a menos de 40 km, el que repita o se quede sin ideas que beba 2 tragos",
