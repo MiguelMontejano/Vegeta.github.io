@@ -273,7 +273,7 @@ input[type=submit]:hover{
     height: 100%;
     background: white;
     position: absolute;
-    top: 80px;
+    top: 10vw;
     /*left: 0;*/
     transition: .3s ease-in-out all;
 }
@@ -372,6 +372,10 @@ input[type=submit]:hover{
         height: 12.5vw;
         padding: 1.4vw 1.8vw 1.4vw 1.8vw;
         font-size: 4.2vw;
+    }
+
+    .btn-empezar::after{
+        top: 9vh;
     }
 }
 
