@@ -440,7 +440,7 @@ const leerDB = () => {
 
     if(arrayJugadores === null || arrayJugadores.length === 0 || arrayJugadores.length === 1) { //Redireccionamos al setup si solo hay un jugador o si no hay ninguno
         arrayJugadores = [];
-        window.location.href = "../Html/Setup.html";
+        window.location.href = "../index.html";
     }
     else{ //Existe algo en el local storage
         
@@ -693,10 +693,10 @@ const siguienteRonda = () => {
             
         }
        
-    }else{
+    } else {
 
         contadorRondas = 0;//Reinicio el contador de rondas
-        window.location.href = "Setup.html";
+        window.location.href = "../index.html";
 
     }
     
