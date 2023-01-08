@@ -46,20 +46,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: justify; 
+    text-align: center; 
     font-size: 2.5vw; 
     min-height: 10vw;
+    /* hyphens: auto; */
 }
 
 @media (min-width: 0px) and (max-width: 768px) {
+    .cuerpo {
+        margin-top: 4vh;
+    }
+
     .caras-duelos{ /*Este div solo esta cuando ocurre un duelo, por lo que las caras tienen que estar al lado*/
         gap: 5vw;
     }
 
     .seccion-texto{
-        text-align: justify;
+        /* text-align: justify; */
         font-size: 3vh; 
-        min-height: 10vw;
+        min-height: 15vw;
+        overflow: scroll;
     }
 
     .jugador-cara{
