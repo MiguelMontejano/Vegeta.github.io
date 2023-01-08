@@ -30,8 +30,12 @@ let contadorCastigos = 0;
 let contadorPreguntas = 0;
 let contadorCultura = 0;
 let contadorBeberxbeber = 0;
+let contadorCaliente = 0;
 
 let arrayJugadores = [];
+const MODO_CALIENTE = localStorage.getItem('caliente');
+console.log('loggeo lo que cojo del local storage caliente ', MODO_CALIENTE);
+
 
 let pruebas = ["Di un recuerdo con cada uno de los aquí presentes y brinda por los buenos momentos", 
 "Bebe el máximo de suspensos que hayas tenido, si es ninguno te solidarizas y bebes con el que más suspensos tiene", 
@@ -95,7 +99,7 @@ let pruebas = ["Di un recuerdo con cada uno de los aquí presentes y brinda por 
 "Reparte 2 tragos por cada pulsera que lleves si no tienes ninguna bebe 2",
 "Haz con mímica una película, quién lo adivine repartirá 5",
 "Haz el ruido de animal que el resto diga y además bebe 2",
-"Patata Caliente: Debéis poner un temporizador de un minuto y medio y el jugador que ha salido deberá adivinar el número católicos en EEUU (los que llevan el tiempo que lo miren). El que adivina puede decir tantos números como quiera hasta dar con el correcto pero los demás jugadores solo le podrán decir más o menos. Suerte porque si lo consigues repartes 10",
+"Patata Caliente: Debéis poner un temporizador de un minuto y medio y el jugador que ha salido deberá adivinar el número católicos en EEUU (los que llevan el tiempo que lo miren). El que adivina puede decir tantos números como quiera hasta dar con el correcto pero los demás jugadores solo le podrán decir más o menos. Si lo consigues repartes 10",
 "Habla con acento (el que quieras) y nos cuentas de qué trata la última serie que has visto. Añade palabras propias de ese acento para ver quién es capaz de adivinar de qué serie se trata, ese jugador repartirá 2 tragos",
 /*SUPERPODERES*/
 "Eres Spider-Man, puedes esquivar 10 tragos que te toquen, además puedes hacer uso de tus telarañas para salvar a cualquiera de los tragos que le mande otro jugador (obviamente se restarán de tu total de 10)",
@@ -194,7 +198,7 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "Cambio de música gente, que cada uno añada una canción a la cola que sea de un género distinto al que soléis poner de fiesta normalmente",
 "A los que les encantan los dias de lluvia beben",
 "A la de tres digan todos el artista que está sonando o uno de ellos, el que falle bebe. Si no tienen música bebed todos panda de amargados",
-"3 verdades,\ndigan tres frases sobre el jugador de su derecha (si se conocen mucho no valen cosas obvias), deben intentar que todas sean verdad, el propio jugador juzgará, por cada frase falsa beberás, por cada una verdadera beberá él.",
+"3 verdades, digan tres frases sobre el jugador de su derecha (si se conocen mucho no valen cosas obvias), deben intentar que todas sean verdad, el propio jugador juzgará, por cada frase falsa beberás, por cada una verdadera beberá él.",
 "Tomense una foto señores, nada de beber por ahora. Haced alguna pose ridícula o graciosa no seáis aburridos/as.",
 "El más rapero bebe, todos votan",
 "Bebe 2 tragos si nunca has ido a una discoteca", 
@@ -212,7 +216,7 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "Nunca es tarde para decir lo siento, si algunos de los presentes están enfadados y quieren hacer las paces es el momento, si sucede brindaremos por ello",
 "Estáis en El Concilio de Elrond (El señor de los Anillos), quedan anulados todos los castigos y normas que había hasta el momento, además brindaréis en honor a Tolkien.",
 "Desde aquí hasta el final de la partida el primero en decir pepino al acabar una canción repartirá 1 trago.",
-"Buenas artistas. Debéis formar parejas (si sois impares un grupo de tres). Uno será el artista y otro el ojeador. Los artistas deberán agruparse lejos de los ojeadores y decidir entre ellos qué dibujará cada uno (cada uno algo diferente). Una vez hecho estó os volvéis a juntar y cada uno con su pareja tendrá 1 minuto para adivinar que está dibujando su artista (SIN PISTAS). Si adivina el resto de parejas beberán un trago",
+"Buenas artistas. Debéis formar parejas (si sois impares un grupo de tres). Uno será el artista y otro el ojeador. Los artistas deberán agruparse lejos de los ojeadores y decidir entre ellos qué dibujará cada uno (cada uno algo diferente). Una vez hecho estó os volvéis a juntar y cada uno con su pareja tendrá 1 minuto para adivinar que está dibujando su artista. Si adivina el resto de parejas beberán un trago",
 "¿Quién es el más MDLR? El elegido Reparte 3",
 "Cuatro nueves son capaces de dar 100 como resultado. ¿Cómo? El primero que responda correctamente reparte tantos tragos como personas haya jugando.",
 "¡ADIVINANZA! Son doce señoras con medias, pero sin zapatos. ¿De quiénes se trata? El primero en responder correctamente (sin hacer trampas) que reparta 4 tragos."
@@ -283,14 +287,14 @@ let duelos = ["Poner una alarma cada uno, cuando suene el otro se bebe la mitad 
 "Sois Chip y Chop. Por cada vez que uno de los dos hable el otro deberá beber 1 trago. Esta prueba dura 10 minutos así que por vustro bien cronometadlo.",
 "Cambio de roles. Los jugadores intercambian sus nombres durante esta partida y lo que le corresponda beber a cada uno se le transferirá al otro y viceversa.",
 "Ambos jugadores vais a beber un chupito, espero que esté bueno la verdad.",
-"Los jugadores jugarán al juego de señalar, existen cuatro direcciones (arriba, abajo, izquierda y derecha), a la cuenta de tres (que sea rápida cada vez) uno de los jugadores apuntará en una dirección y el otro deberá mirar en la dirección opuesta a la que apunta el dedo, si lo consigue apuntará él y el otro jugador deberá hacer lo mismo, el primero que se equivoque bebe 5",
+"Los jugadores jugarán al juego de señalar, existen cuatro direcciones (arriba, abajo, izquierda y derecha), a la cuenta de tres uno de los jugadores apuntará en una dirección y el otro deberá mirar a una dirección distinta a la que apunta el dedo, si lo consigue apuntará él y el otro jugador deberá hacer lo mismo, el primero que se equivoque bebe 5",
 "Jugad a piedra papel o tijera, al mejor de tres, el que pierda bebe 4",
 "El primer jugador es Romeo y el segundo Julieta. Julieta en muestra de su amor beberá en lugar de Romeo hasta el final de la partida. A cambio, Romeo se tomará todo lo que le quede en el vaso al final de la partida lleno de tristeza por su Julieta.",
 "Batalla de rimas entre los jugadores, no os cortéis si no sabéis hacerlo, esto es para echarse unas risas",
 "Buscad lo siguiente en YT: juego douglas costa dybala. Echad una partida entre los dos y que el resto haga de juez, el que pierda bebe 2",
 "El lazarillo de Tormes. Preparad un circuito con obstáculos. El segundo jugador será ciego asi que vendadle los ojos. Deberá recorrer el circuito siguiendo las indicaciones de su compañero sin fallar. Si lo consiguen podrán hacer que otro jugador beba la mitad de lo que queda en su vaso. Si no lo conseguís beberéis entre los dos lo equivalente a medio vaso (1/4 cada uno)",
 "Pulso chino entre los jugadores. El perdedor bebe 3 tragos",
-"Pulso clásico entre los jugadores, el que gane hará que el otro jugador beba 4 tragos. En este punto otro de los jugadores de la partida puede interponerse para que el perdedor no beba, retando al ganador anterior a un pulso en el que el nuevo retador beberá el doble de tragos que tocaban si es que pierde, el otro jugador mantiene los tragos de su ronda. Cada jugador puede solo salvar a otro una vez.",
+"Pulso clásico entre los jugadores, el que gane hará que el otro jugador beba 4 tragos. ",
 "El primer jugador deberá coger al segundo como una princesa, si no puede con él/ella deberá beber 4 tragos para ponerse más fuerte.",
 "El jugador que salte más alto de los dos hará beberse al otro 2 tragos.",
 "Pulso vasco entre los jugadores. El perdedor bebe 3. Si no aceptáis bebed 1 trago y seguimos jugando"
@@ -314,7 +318,6 @@ let castigos = ["Cambiaros todos de sitio, deberá ser durante toda la noche, el
 "No podrás parpadear durante 1 minuto",
 "Llamar por teléfono a un familiar o amigo y hacerle una falsa confesión acordada por el grupo, si se la cree reparte 10 si no beberás 5",
 "Eres Moisés, así que de aquí al final del juego podrás abrir en dos los mares y hacer que todo el mundo reduzca su vaso a la mitad",
-"Eres el alcalde, tu tributo será el móvil/pc con el que se está jugando, tu serás el encargado de leer y pasar las pantallas, por cada una deberás beber dos tragos. Pero recuerden que esto es política, el resto de jugadores podrá sobornarte y beberlos en tu lugar cuando quieran (recuérdalo para devolverles el favor en caso de ser necesario) tras 5 rondas, habrá elecciones, en las que se elegirá otro presidente o te volverán a elegir a ti. Esto se repetirá 3 veces en la partida, es decir un total de 20 rondas. Después de eso se acabó la política.",
 "Elimina 5 aplicaciones de tu teléfono o bebe 10 tragos",
 "Todos deberéis dirigiros hacia quién habléis de manera despectiva. Daros caña un rato y un trago por cada falta.",
 "2 Minutos sin apoyar el vaso en la mesa",
@@ -412,13 +415,27 @@ let beberxbeber = ["Reparte 5 tragos si eres el que  siempre lleva a la gente de
 "Silencio todo el mundo, comienza el juego de las bodas, todos podeis hacer una propuesta de matrimonio a otro jugador, este podrá aceptarla o no, si la rechaza deberás beber 2 tragos para ahogar las penas, si acepta debeis besaros (pico) y el resto beberá 5 tragos",
 ];
 
-let picantes = ["Cuenta un sueño erótico que hayas tenido, reparte 2 tragos", 
+let calientes = ["Cuenta un sueño erótico que hayas tenido, reparte 2 tragos", 
 "Dale un beso a otra persona del grupo, en la parte del cuerpo que prefieras, si se niega esa persona bebe 5",
 "¿Qué es lo más raro con lo que te has masturbado? Puede ser un objeto, un vídeo, una escena en tu mente...",
+"Besa el cuello de la persona de tu derecha, en caso de que se niegue beberá 3 tragos",
+"Besa el cuello de la persona de tu izquierda, en caso de que se niegue beberá 3 tragos",
 "¿Que sentiste la primera que practicaste sexo oral?",
 "Bebe un trago si hay alguna persona jugando con la que te gustaría FXXXXR",
+"Toca los genitales de la persona de tu derecha, si se niega beberá 2 tragos",
+"Toca los genitales de la persona de tu izquierda, si se niega beberá 2 tragos",
 "EL jugador la madre que esté más buena bebe 1, todos votan",
 "Enseñad como vais de depilados/as, el que más pelo tenga que beba",
+"Dale un pico a la persona de tu derecha, si se niega beberá 4 tragos",
+"Dale un pico a la persona de tu izquierda, si se niega beberá 4 tragos",
+"Dale un pico a la persona que tengas enfrente, si se niega beberá 4 tragos",
+"Beso con lengua a la persona del sexo opuesto que tengas más cerca hacia tu derecha, si se niega 2 tragos",
+"Beso con lengua a la persona del sexo opuesto que tengas más cerca hacia tu izquierda, si se niega 2 tragos",
+"Responde prueba o verdad picante, el resto de jugadores te pondrá la prueba o pregunta correspondiente",
+"Debes quitarte una prenda o beber 4 tragos.",
+"Ronda de yo nunca caliente, empiezas tú.",
+"Debes quitarle una prenda a la persona que esté a tu izquierda, si se niega bebe 5 tragos.",
+"Debes quitarle una prenda a la persona que esté a tu derecha, si se niega bebe 5 tragos.",
 "Concurso de calzoncillos entre los hombres, el jugador que lleve los más bonitos bebe 3, las chicas votan",
 "Concurso de sujetadores entre las chicas, la chica que lleve el más bonito bebe 3, los hombres votan",
 "Concurso de tangas entre las chicas, la chica que lleve el más bonito bebe 3, los hombres votan",
@@ -459,239 +476,418 @@ const siguienteRonda = () => {
     zonaNombre.innerHTML = '';
     zonaTexto.innerHTML = ''; //Siempre que trabajamos con innerHtml tenemos que empezar con el string vacio
     
-    if(contadorRondas <= rondasPorPartida){
-    
-        //En las pruebas de tipo general no debe salir nombre, y en las de duelo deben salir dos nombres
-        let randomTipo = Math.floor(Math.random()*tiposPruebas);
-        //console.log("tipo de la prueba: "+randomTipo)
-
-        if(randomTipo == 0){ //pruebas
-            if(contadorPruebas <= 8){  
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorPruebas++;
-                let objetoRonda = seleccionarJugador(1);
-                let jugadorRonda = objetoRonda.jugador
-                let personaje = objetoRonda.personaje
-
-                let randomPrueba = Math.floor(Math.random()*pruebas.length);
-                let juegoRonda = pruebas[randomPrueba];
-                console.log('einn?? ', juegoRonda);
-
-                document.body.style.backgroundColor = "#118ab2";
+    if(contadorRondas <= rondasPorPartida) {
+        if (MODO_CALIENTE === 'activado') {
+            //En las pruebas de tipo general no debe salir nombre, y en las de duelo deben salir dos nombres
+            let randomTipo = Math.floor(Math.random()*tiposPruebas);
+            //console.log("tipo de la prueba: "+randomTipo)
             
-                /*Que me devuelva la imagen el metodo que me devuelve el jugador, en un objeto que tenga un atributo que sea el araay jugaodres y otro que sean las imagenes*/
+            if(randomTipo == 0){ //pruebas
+                if(contadorPruebas <= 6){  
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorPruebas++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
 
-                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
-                <div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda}</h1>
-                </div>`
-            
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                pruebas.splice(randomPrueba, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
+                    let randomPrueba = Math.floor(Math.random()*pruebas.length);
+                    let juegoRonda = pruebas[randomPrueba];
 
-            
-        }
-
-        if(randomTipo == 1){ //generales
-            if(contadorGenerales <= 8){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorGenerales++;
-                let randomGeneral = Math.floor(Math.random()*generales.length);
-                let juegoRonda = generales[randomGeneral];
-
-                document.body.style.backgroundColor = "#118ab2";
+                    document.body.style.backgroundColor = "#118ab2";
                 
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                generales.splice(randomGeneral, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
+                    /*Que me devuelva la imagen el metodo que me devuelve el jugador, en un objeto que tenga un atributo que sea el araay jugaodres y otro que sean las imagenes*/
 
-        }
-
-        if(randomTipo == 2){ //eleccion
-            if(contadorEleccion <= 2){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorEleccion++;
-                let randomTragos = Math.floor((Math.random()*3)+1); //Sumandole uno evito que salgan cero tragos
-                let randomEleccion = Math.floor(Math.random()*eleccion.length);
-                let randomConvencer = Math.random() < 0.25
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>`
                 
-                let juegoRonda = eleccion[randomEleccion];
-
-                document.body.style.backgroundColor = "#ffd166";
-            
-                if(randomConvencer === true){ //Una de cada 4 veces saldrá lo de convencer
                     zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                    <div>${juegoRonda}, ${randomTragos} tragos. Una vez se haya votado la minoría podrá argumentar para
-                    llevar a la mayoría a su terreno. En caso de conseguirlo la nueva minoría beberá lo que toque</div>
+                    <div>${juegoRonda}</div>
                     </div>`
-
-                }else{
-                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                    <div>${juegoRonda}, ${randomTragos} tragos</div>
-                    </div>`
+        
+                    pruebas.splice(randomPrueba, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
                 }
 
-                eleccion.splice(randomEleccion, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
+                
             }
             
+            if(randomTipo == 1){ //generales
+                if(contadorGenerales <= 6){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorGenerales++;
+                    let randomGeneral = Math.floor(Math.random()*generales.length);
+                    let juegoRonda = generales[randomGeneral];
+
+                    document.body.style.backgroundColor = "#118ab2";
+                    
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    generales.splice(randomGeneral, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+
+            }
+            
+            if(randomTipo == 3){ //duelos
+                if(contadorDuelos <= 3){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorDuelos++;
+                    let objetoRonda = seleccionarJugador(2);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomDuelo = Math.floor(Math.random()*duelos.length);
+                    let juegoRonda = duelos[randomDuelo];
+
+                    document.body.style.backgroundColor = "#ef476f";
+
+                    zonaNombre.innerHTML += `<div class="caras-duelos">
+                    <div class="jugador-cara" style="background-image:url(../Images/${personaje[0]});"></div>
+                    <div class="jugador-cara" style="background-image:url(../Images/${personaje[1]});"></div>
+                    </div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda[0]} y ${jugadorRonda[1]}</h1>
+                    </div>`
+        
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    duelos.splice(randomDuelo, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+                
+            }
+            
+            if(randomTipo == 4){ //castigos
+                if(contadorCastigos <= 2){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorCastigos++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomCastigo = Math.floor(Math.random()*castigos.length);
+                    let juegoRonda = castigos[randomCastigo];
+
+                    document.body.style.backgroundColor = "#222222";
+                
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>`
+                
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    castigos.splice(randomCastigo, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+                
+            }
+            
+            if(randomTipo == 5){ //preguntas
+                if(contadorPreguntas <= 3){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorPreguntas++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomPregunta = Math.floor(Math.random()*preguntas.length);
+                    let juegoRonda = preguntas[randomPregunta];
+
+                    document.body.style.backgroundColor = "#118ab2";
+                
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>`
+        
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    preguntas.splice(randomPregunta, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+
+            }
+
+            if(randomTipo === 2 || randomTipo === 6 || randomTipo === 7){ //caliente
+                if(contadorCaliente <= 15){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorCaliente++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomCaliente = Math.floor(Math.random()*calientes.length);
+                    let juegoRonda = calientes[randomCaliente];
+
+                    document.body.style.backgroundColor = "#f5259e";
+                
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>` 
+                
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    calientes.splice(randomCaliente, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }  
+            }
+
+        } else {
+            //En las pruebas de tipo general no debe salir nombre, y en las de duelo deben salir dos nombres
+            let randomTipo = Math.floor(Math.random()*tiposPruebas);
+            //console.log("tipo de la prueba: "+randomTipo)
+
+            if(randomTipo == 0){ //pruebas
+                if(contadorPruebas <= 8){  
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorPruebas++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+
+                    let randomPrueba = Math.floor(Math.random()*pruebas.length);
+                    let juegoRonda = pruebas[randomPrueba];
+
+                    document.body.style.backgroundColor = "#118ab2";
+                
+                    /*Que me devuelva la imagen el metodo que me devuelve el jugador, en un objeto que tenga un atributo que sea el araay jugaodres y otro que sean las imagenes*/
+
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>`
+                
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    pruebas.splice(randomPrueba, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+
+                
+            }
+
+            if(randomTipo == 1){ //generales
+                if(contadorGenerales <= 8){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorGenerales++;
+                    let randomGeneral = Math.floor(Math.random()*generales.length);
+                    let juegoRonda = generales[randomGeneral];
+
+                    document.body.style.backgroundColor = "#118ab2";
+                    
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    generales.splice(randomGeneral, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+
+            }
+
+            if(randomTipo == 2){ //eleccion
+                if(contadorEleccion <= 2){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorEleccion++;
+                    let randomTragos = Math.floor((Math.random()*3)+1); //Sumandole uno evito que salgan cero tragos
+                    let randomEleccion = Math.floor(Math.random()*eleccion.length);
+                    let randomConvencer = Math.random() < 0.25
+                    
+                    let juegoRonda = eleccion[randomEleccion];
+
+                    document.body.style.backgroundColor = "#ffd166";
+                
+                    if(randomConvencer === true){ //Una de cada 4 veces saldrá lo de convencer
+                        zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                        <div>${juegoRonda}, ${randomTragos} tragos. Una vez se haya votado la minoría podrá argumentar para
+                        llevar a la mayoría a su terreno. En caso de conseguirlo la nueva minoría beberá lo que toque</div>
+                        </div>`
+
+                    }else{
+                        zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                        <div>${juegoRonda}, ${randomTragos} tragos</div>
+                        </div>`
+                    }
+
+                    eleccion.splice(randomEleccion, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+                
+            }
+
+            if(randomTipo == 3){ //duelos
+                if(contadorDuelos <= 5){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorDuelos++;
+                    let objetoRonda = seleccionarJugador(2);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomDuelo = Math.floor(Math.random()*duelos.length);
+                    let juegoRonda = duelos[randomDuelo];
+
+                    document.body.style.backgroundColor = "#ef476f";
+
+                    zonaNombre.innerHTML += `<div class="caras-duelos">
+                    <div class="jugador-cara" style="background-image:url(../Images/${personaje[0]});"></div>
+                    <div class="jugador-cara" style="background-image:url(../Images/${personaje[1]});"></div>
+                    </div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda[0]} y ${jugadorRonda[1]}</h1>
+                    </div>`
+        
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    duelos.splice(randomDuelo, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+                
+            }
+
+            if(randomTipo == 4){ //castigos
+                if(contadorCastigos <= 4){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorCastigos++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomCastigo = Math.floor(Math.random()*castigos.length);
+                    let juegoRonda = castigos[randomCastigo];
+
+                    document.body.style.backgroundColor = "#222222";
+                
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>`
+                
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    castigos.splice(randomCastigo, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+                
+            }
+
+            if(randomTipo == 5){ //preguntas
+                if(contadorPreguntas <= 3){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorPreguntas++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomPregunta = Math.floor(Math.random()*preguntas.length);
+                    let juegoRonda = preguntas[randomPregunta];
+
+                    document.body.style.backgroundColor = "#118ab2";
+                
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>`
+        
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    preguntas.splice(randomPregunta, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+
+            }
+
+            if(randomTipo == 6){//cultura
+                if(contadorCultura <= 2){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorCultura++;
+                    let objetoRonda = seleccionarJugador(1);
+                    let jugadorRonda = objetoRonda.jugador
+                    let personaje = objetoRonda.personaje
+                    let randomCultura = Math.floor(Math.random()*cultura.length);
+                    let juegoRonda = cultura[randomCultura];
+
+                    document.body.style.backgroundColor = "#0068c9";
+                
+                    zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
+                    <div class="seccion-nombre" id="texto-nombre">
+                    <h1>${jugadorRonda}</h1>
+                    </div>` 
+                
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    cultura.splice(randomCultura, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+
+                
+            }
+
+            if(randomTipo == 7){ //beberxbeber
+                if(contadorBeberxbeber <= 3){ 
+                    contadorRondas++; //Sumo uno al contador de rondas
+                    contadorBeberxbeber++;
+                    let randomBeber = Math.floor(Math.random()*beberxbeber.length);
+                    let juegoRonda = beberxbeber[randomBeber];
+
+                    document.body.style.backgroundColor = "#06d6a0";
+                
+                    zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
+                    <div>${juegoRonda}</div>
+                    </div>`
+        
+                    beberxbeber.splice(randomBeber, 1);//Para que en una misma partida no salga dos veces la misma prueba
+                }
+                else{
+                    siguienteRonda();
+                }
+                
+            }
         }
 
-        if(randomTipo == 3){ //duelos
-            if(contadorDuelos <= 5){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorDuelos++;
-                let objetoRonda = seleccionarJugador(2);
-                let jugadorRonda = objetoRonda.jugador
-                let personaje = objetoRonda.personaje
-                let randomDuelo = Math.floor(Math.random()*duelos.length);
-                let juegoRonda = duelos[randomDuelo];
 
-                document.body.style.backgroundColor = "#ef476f";
-
-                zonaNombre.innerHTML += `<div class="caras-duelos">
-                <div class="jugador-cara" style="background-image:url(../Images/${personaje[0]});"></div>
-                <div class="jugador-cara" style="background-image:url(../Images/${personaje[1]});"></div>
-                </div>
-                <div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda[0]} y ${jugadorRonda[1]}</h1>
-                </div>`
-    
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                duelos.splice(randomDuelo, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
-            
-        }
-
-        if(randomTipo == 4){ //castigos
-            if(contadorCastigos <= 4){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorCastigos++;
-                let objetoRonda = seleccionarJugador(1);
-                let jugadorRonda = objetoRonda.jugador
-                let personaje = objetoRonda.personaje
-                let randomCastigo = Math.floor(Math.random()*castigos.length);
-                let juegoRonda = castigos[randomCastigo];
-
-                document.body.style.backgroundColor = "#222222";
-            
-                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
-                <div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda}</h1>
-                </div>`
-            
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                castigos.splice(randomCastigo, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
-            
-        }
-
-        if(randomTipo == 5){ //preguntas
-            if(contadorPreguntas <= 3){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorPreguntas++;
-                let objetoRonda = seleccionarJugador(1);
-                let jugadorRonda = objetoRonda.jugador
-                let personaje = objetoRonda.personaje
-                let randomPregunta = Math.floor(Math.random()*preguntas.length);
-                let juegoRonda = preguntas[randomPregunta];
-
-                document.body.style.backgroundColor = "#118ab2";
-            
-                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
-                <div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda}</h1>
-                </div>`
-    
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                preguntas.splice(randomPregunta, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
-
-        }
-
-        if(randomTipo == 6){//cultura
-            if(contadorCultura <= 2){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorCultura++;
-                let objetoRonda = seleccionarJugador(1);
-                let jugadorRonda = objetoRonda.jugador
-                let personaje = objetoRonda.personaje
-                let randomCultura = Math.floor(Math.random()*cultura.length);
-                let juegoRonda = cultura[randomCultura];
-
-                document.body.style.backgroundColor = "#0068c9";
-            
-                zonaNombre.innerHTML += `<div class="jugador-cara" style="background-image:url(../Images/${personaje});"></div>
-                <div class="seccion-nombre" id="texto-nombre">
-                <h1>${jugadorRonda}</h1>
-                </div>` 
-            
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                cultura.splice(randomCultura, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
-
-            
-        }
-
-        if(randomTipo == 7){ //beberxbeber
-            if(contadorBeberxbeber <= 3){ 
-                contadorRondas++; //Sumo uno al contador de rondas
-                contadorBeberxbeber++;
-                let randomBeber = Math.floor(Math.random()*beberxbeber.length);
-                let juegoRonda = beberxbeber[randomBeber];
-
-                document.body.style.backgroundColor = "#06d6a0";
-            
-                zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
-                <div>${juegoRonda}</div>
-                </div>`
-    
-                beberxbeber.splice(randomBeber, 1);//Para que en una misma partida no salga dos veces la misma prueba
-            }
-            else{
-                siguienteRonda();
-            }
-            
-        }
        
     } else {
 
