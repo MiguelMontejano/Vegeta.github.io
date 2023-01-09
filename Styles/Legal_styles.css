@@ -101,3 +101,28 @@
         font-size: 1.5vh;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {    
+    .cuerpo, .contenido {
+        font-size: 2.4vh;
+    }
+
+    .btn-empezar{
+        border-radius: 50px;
+        width: 30vw;
+        height: 10vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 1.8vh;
+    }
+
+    .btn-empezar::after{
+        content: "";
+        width: 150%;
+        height: 100%;
+        background: white;
+        position: absolute;
+        top: 100px;
+        /*left: 0;*/
+        transition: .3s ease-in-out all;
+    }
+}

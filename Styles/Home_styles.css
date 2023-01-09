@@ -52,7 +52,7 @@
     /* hyphens: auto; */
 }
 
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 767px) {
     .cuerpo {
         margin-top: 4vh;
     }
@@ -65,7 +65,27 @@
         /* text-align: justify; */
         font-size: 3vh; 
         min-height: 15vw;
-        overflow: scroll;
+    }
+
+    .jugador-cara{
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {    
+    .cuerpo {
+        margin-top: 1vh;
+    }
+
+    .caras-duelos{ /*Este div solo esta cuando ocurre un duelo, por lo que las caras tienen que estar al lado*/
+        gap: 5vw;
+    }
+
+    .seccion-texto{
+        font-size: 4.2vw; 
+        min-height: 15vw;
     }
 
     .jugador-cara{

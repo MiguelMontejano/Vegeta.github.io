@@ -209,3 +209,48 @@ header{
         font-size: 2.5vh;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {    
+    .notas-version {
+        margin-top: 1vw;
+        font-size: 3.5vh;
+        font-weight: 700;
+    }
+
+    .cuerpo{
+        font-size: 2.3vh;
+    }
+
+    .img-presentacion{
+        width: 40vh;
+    }
+
+    .redes-sociales-contenedor{
+        font-size: 7vh;
+        column-gap: 2vh;
+    }
+
+    .contenedor-btn-iniciar{
+        margin-top: 1vw;
+        margin-bottom: 2vw;
+    }
+    
+    .btn-empezar{
+        border-radius: 50px;
+        width: 30vw;
+        height: 10vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 1.8vh;
+    }
+
+    .btn-empezar::after{
+        content: "";
+        width: 150%;
+        height: 100%;
+        background: white;
+        position: absolute;
+        top: 100px;
+        /*left: 0;*/
+        transition: .3s ease-in-out all;
+    }
+}
