@@ -124,7 +124,8 @@ let pruebas = ["Di un recuerdo con cada uno de los aquí presentes y brinda por 
 "Antes que te vayas dame un beso... Añade las siguientes 6 palabras o bebe 2 tragos pero si aciertas reparte 2."
 ];
 
-let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coincides bebes 2", 
+let generales = ["Si tus fiestas favoritas son en las que se escucha Reggaeton reparte 2, si eres de Electrónica (EDM) reparte 4, si solo te gusta el Techno/Rock/Heavy/Indie... bebe 2",
+"Mirar todos hacia abajo y a la de tres mira a alguien si coincides bebes 2", 
 "El primero en decir la hora reparte 3 tragos",
 "El porcentaje de batería más alto bebe 1 tragos", 
 "El porcentaje de batería más bajo bebe 2 tragos",
@@ -210,7 +211,6 @@ let generales = ["Mirar todos hacia abajo y a la de tres mira a alguien si coinc
 "Bebe 2 tragos si hoy dijiste HOY NO BEBO",
 "La persona más guapa de las que están jugando bebe, todos votan",
 "Dos tragos para el/la que mejor viste, todos votan",
-"Si tus fiestas favoritas son en las que se escucha Reggaeton reparte 2, si eres de Electrónica (EDM) reparte 4, si solo te gusta el Techno/Rock/Heavy/Indie... bebe 2",
 "Los Otakus a los que les gusta el Anime beben (están exentos a los que les gusten Animes del tipo Doraemon, Inazuma Eleven o Dragon Ball)",
 "Época de la NBA Pre-Jordan, todos los que tengan las zapatillas blancas serán multados con un trago.",
 "Nunca es tarde para decir lo siento, si algunos de los presentes están enfadados y quieren hacer las paces es el momento, si sucede brindaremos por ello",
