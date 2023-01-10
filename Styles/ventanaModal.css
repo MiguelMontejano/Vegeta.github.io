@@ -97,3 +97,43 @@ ul li::before {
     width: 1em;
     margin-left: -1em;
 }
+
+@media (min-width: 0px) and (max-width: 767px) {
+    .modal-content {
+        width: 90%;
+        height: 95%;
+    }
+
+    .modal-titulo{
+        font-size: 3vw;
+    }
+
+    .modal-texto, .lista-normas{
+        font-size: 2.45vw;
+    }
+
+    .modal-content .close {
+        font-size: 5vw;
+        padding-right: 3vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .modal-content {
+        width: 90%;
+        height: 95%;
+    }
+
+    .modal-titulo{
+        font-size: 3.8vw;
+    }
+
+    .modal-texto, .lista-normas{
+        font-size: 2.2vw;
+    }
+
+    .modal-content .close {
+        font-size: 4vw;
+        padding-right: 3vw;
+    }
+}

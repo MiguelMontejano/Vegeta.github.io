@@ -17,3 +17,11 @@ const redirigirSetup = () => {
 const redirigirSetupIndex = () => {
     window.location.href = "./Html/Setup.html";
 }
+
+const redirigirInstagram = () => {
+    window.location.href = "https://www.instagram.com/hoynobeboapp/";
+}
+
+const redirigirTiktok = () => {
+    window.location.href = "https://www.tiktok.com/@hoynobebo_oficial";
+}

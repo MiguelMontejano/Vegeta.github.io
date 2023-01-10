@@ -45,17 +45,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 2vw;
     font-size: 8vw;
 }
 
-.fa-instagram, .fa-twitter, .fa-paypal{
+.redes-sociales-contenedor iconify-icon { 
+    cursor: pointer;
+    color: #222222;
+}
+
+
+.fa-instagram .fa-paypal{
     margin-bottom: 1vw;
-    margin-right: 1vw;
-    margin-left: 1vw;
     text-shadow: 0.1vw 0.1vw rgba(0, 0, 0, 0.315);
 }
 
-.fa-instagram:hover, .fa-twitter:hover, .fa-paypal:hover{
+.fa-instagram:hover, .fa-paypal:hover, .redes-sociales-contenedor iconify-icon:hover {
     cursor: pointer;
     animation: arribaAbajo 0.85s infinite ease-out;
 }

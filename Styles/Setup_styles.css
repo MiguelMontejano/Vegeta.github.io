@@ -1,6 +1,6 @@
 .cuerpo{
     width: 100%;
-    margin-top: 5vw;
+    margin-top: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,6 +17,51 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.index-contenedor-redes-sociales {
+    padding: .5vw 1vw .5vw 1vw;
+    border-radius: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: .5vw;
+    font-size: 3.5vw;
+/*     padding-left: 4vw; */
+    margin-bottom: 2vw;
+    background-color: #073b4c36;
+}
+
+.texto-siguenos {
+    font-size: 1.5vw;
+}
+
+.index-contenedor-redes-sociales-iconos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: .5vw;
+    color: #222222;
+}
+
+.index-contenedor-redes-sociales-iconos i, .index-contenedor-redes-sociales-iconos iconify-icon {
+cursor: pointer;
+}
+
+.index-contenedor-redes-sociales .fa-instagram {
+    cursor: pointer;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.index-contenedor-redes-sociales .fa-instagram:before {
+    display: inline;
 }
 
 .presentacion-juego{
@@ -289,6 +334,26 @@ input[type=submit]:hover{
 }
 
 @media (min-width: 0px) and (max-width: 768px) {
+    .cuerpo {
+        margin-top: 8vw;
+    }
+
+    .index-contenedor-redes-sociales {
+        padding: .5vw 1vw .5vw 1vw;
+        border-radius: 0.5vw;
+        row-gap: .5vw;
+        font-size: 7.5vw;
+        margin-bottom: 2vw;
+    }
+    
+    .texto-siguenos {
+        font-size: 4vw;
+    }
+    
+    .index-contenedor-redes-sociales-iconos {
+        column-gap: 2.5vw;
+    }
+
     .presentacion-juego{
         font-size: 5vw;
         margin-bottom: 8vw;
@@ -379,7 +444,27 @@ input[type=submit]:hover{
     }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {    
+@media (min-width: 768px) and (max-width: 1023px) {  
+    .cuerpo {
+        margin-top: 8vw;
+    }
+
+    .index-contenedor-redes-sociales {
+        padding: .5vw 1vw .5vw 1vw;
+        border-radius: 0.5vw;
+        row-gap: .5vw;
+        font-size: 7vw;
+        margin-bottom: 2vw;
+    }
+    
+    .texto-siguenos {
+        font-size: 3.5vw;
+    }
+    
+    .index-contenedor-redes-sociales-iconos {
+        column-gap: 2.5vw;
+    }
+    
     
     .presentacion-juego{
         font-size: 3vw;
