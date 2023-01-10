@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+.seccion-texto-titulo {
+    font-size: 3.5vw;
+    font-weight: 800;
+}
+
 .contenido{
     width: 90%;
     justify-content: center;
@@ -135,6 +140,11 @@
         font-size: 2.4vh;
     }
 
+    .seccion-texto-titulo {
+        font-size: 6vw;
+        margin-top: 8vw;
+    }
+
     .paypal-contenedor, .redes-sociales-contenedor {
         font-size: 8vh;
         column-gap: 2vh;
@@ -153,5 +163,46 @@
         height: 10vw;
         padding: 1.4vw 1.8vw 1.4vw 1.8vw;
         font-size: 1.5vh;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {    
+    .cuerpo, .contenido {
+        font-size: 2.8vh;
+    }
+
+    .seccion-texto-titulo {
+        font-size: 4.5vw;
+    }
+
+    .paypal-contenedor, .redes-sociales-contenedor {
+        font-size: 8vh;
+        column-gap: 2vh;
+    }
+
+    .separador{
+        width: 6vh;
+        height: 0.85vh;
+        background-color: white; 
+        margin: 1vh 0 1vh 0;
+    }
+
+    .btn-empezar{
+        border-radius: 50px;
+        width: 30vw;
+        height: 10vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 1.8vh;
+    }
+
+    .btn-empezar::after{
+        content: "";
+        width: 150%;
+        height: 100%;
+        background: white;
+        position: absolute;
+        top: 100px;
+        /*left: 0;*/
+        transition: .3s ease-in-out all;
     }
 }

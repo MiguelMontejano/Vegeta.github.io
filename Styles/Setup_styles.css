@@ -379,27 +379,27 @@ input[type=submit]:hover{
     }
 }
 
-@media (min-width: 768px) {    
+@media (min-width: 768px) and (max-width: 1023px) {    
     
     .presentacion-juego{
-        font-size: 2.5vw;
+        font-size: 3vw;
         margin-bottom: 2vw;
     }
 
     .caliente-label {
-        width: 4vw;
-        height: 2vw;
-        font-size: 1.75vw;
-        text-indent: -375%;
+        width: 6vw;
+        height: 3vw;
+        font-size: 2.2vw;
+        text-indent: -325%;
     }
 
     .caliente-label::after {
-        width: 2vw;
-        height: 2vw;
+        width: 3vw;
+        height: 3vw;
     }
 
     .switch-caliente:checked + .caliente-label::after {
-        left: 1.91vw;
+        left: 2.82vw;
     }
     
     .brmedium {
@@ -407,36 +407,35 @@ input[type=submit]:hover{
     }
 
     input[type=text]{
-        width: 55vw;
+        width: 65vw;
     }
     
     input[type=submit]{
-        width: 11vw;
-        font-size: 2vw;
+        width: 14vw;
+        font-size: 2.5vw;
         padding: 1vw 1.4vw 1vw 1.4vw;
     }
 
     .contenedor-tarjetas{
-        width: 55%;
+        width: 70%;
         grid-template-columns: repeat(3, 1fr);
         gap: 1vw;
     }
 
     .tarjetas-jugador{
-        /*width: 40%;*/
-        height: 100%;
+        height: 20vw;
         border-radius: 10%;
     }
 
     .nombre-tarjeta{
         height: 3vw;
-        font-size: 1.9vw;
-        padding-top: 0.4vw;
+        font-size: 2.3vw;
+        padding: 0.4vw 0 1vw 0;
     }
 
     .iconos-vasos{
         margin-left: 0.5vw;
-        margin-top: 3.1vw;
+        margin-top: 5.5vw;
     }
 
     .fa-cocktail{
@@ -449,7 +448,97 @@ input[type=submit]:hover{
     }
 
     .fa-plus, .cruz-tarjetas {
-        padding-top: 0.6vw;
+        padding-top: 1.6vw;
+    }
+        
+    .contenedor-btn-iniciar{
+        margin-top: 2vw;
+    }
+    
+    .btn-empezar{
+        margin: 2vw 0 2vw 0;
+        border-radius: 50px;
+        width: 18vw;
+        height: 7.5vw;
+        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
+        font-size: 2.5vw;
+    }
+}
+
+
+@media (min-width: 1024px) {    
+    
+    .presentacion-juego{
+        font-size: 1.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .caliente-label {
+        width: 4vw;
+        height: 2vw;
+        font-size: 1.2vw;
+        text-indent: -260%;
+    }
+
+    .caliente-label::after {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .switch-caliente:checked + .caliente-label::after {
+        left: 1.96vw;
+    }
+    
+    .brmedium {
+        margin-bottom: 1vw;
+    }
+
+    input[type=text]{
+        width: 60vw;
+        font-size: 1.5vw;
+    }
+    
+    input[type=submit]{
+        width: 9vw;
+        font-size: 1.5vw;
+        padding: 1vw 1.4vw 1vw 1.4vw;
+    }
+
+    .contenedor-tarjetas{
+        width: 55%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1vw;
+    }
+
+    .tarjetas-jugador{
+        height: 14vw;
+        border-radius: 10%;
+    }
+
+    .nombre-tarjeta{
+        height: 1.8vw;
+        font-size: 1.5vw;
+        padding: 0.4vw 0 1vw 0;
+    }
+
+    .iconos-vasos {
+        font-size: 1.6vw;
+        margin-left: 0.5vw;
+        margin-top: 4vw;
+    }
+
+    .fa-cocktail {
+        margin-right: 0.3vw;
+        padding-top: 0.2vw;
+    }
+
+    .iconos-abajo {
+        height: 25%;
+        font-size: 1.8vw;
+    }
+
+    .fa-plus, .cruz-tarjetas {
+        padding-top: 1vw;
     }
         
     .contenedor-btn-iniciar{
@@ -460,49 +549,8 @@ input[type=submit]:hover{
         margin: 2vw 0 2vw 0;
         border-radius: 50px;
         width: 14vw;
-        height: 4.5vw;
+        height: 5vw;
         padding: 1.4vw 1.8vw 1.4vw 1.8vw;
-        font-size: 1.5vw;
-    }
-}
-
-@media (min-width: 0px) and (max-width: 767px) and (orientation: landscape) {
-    .presentacion-juego{
-        margin-top: 6vw;
-        font-size: 2.8vw;
-        margin-bottom: 2vw;
-    }
-
-    input[type=submit]{
-        width: 16vw;
-        font-size: 3vw;
-        padding: 1vw 1.4vw 1vw 1.4vw;
-    }
-
-    .caliente-label {
-        width: 6vw;
-        height: 3vw;
-        font-size: 2.5vw;
-        text-indent: -350%;
-    }
-
-    .caliente-label::after {
-        width: 3vw;
-        height: 3vw;
-    }
-
-    .switch-caliente:checked + .caliente-label::after {
-        left: 2.95vw;
-    }
-
-    .btn-empezar{
-        width: 22vw;
-        height: 9vw;
-        padding: 1.4vw 1.8vw 1.4vw 1.8vw;
-        font-size: 3vw;
-    }
-
-    .btn-empezar::after{
-        top: 10vw;
+        font-size: 2vw;
     }
 }
