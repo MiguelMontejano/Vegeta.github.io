@@ -73,17 +73,23 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 3vw;
+    font-size: 5vw;
+    column-gap: 2vw;
 }
 
-.fa-instagram, .fa-twitter{
+.redes-sociales-contenedor iconify-icon { 
+    cursor: pointer;
+    color: #222222;
+}
+
+.fa-instagram{
     margin-bottom: 1vw;
     margin-right: 1vw;
     margin-left: 1vw;
     text-shadow: 0.1vw 0.1vw rgba(0, 0, 0, 0.315);
 }
 
-.fa-instagram:hover, .fa-twitter:hover{
+.fa-instagram:hover, .redes-sociales-contenedor iconify-icon:hover {
     cursor: pointer;
     animation: arribaAbajo 0.85s infinite ease-out;
 }
@@ -110,15 +116,6 @@ header{
 
 .lista-contenido {
     list-style: none;
-}
-  
-.lista-contenido li::before {
-    content: "\2022";
-    color: #073b4c;
-    font-weight: bold;
-    display: inline-block; 
-    width: 1em;
-    margin-left: -1em;
 }
 
 .contenedor-btn-iniciar{
