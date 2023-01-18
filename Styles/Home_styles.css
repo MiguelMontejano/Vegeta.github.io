@@ -44,57 +44,12 @@
     color: white;
     width: 90%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center; 
     font-size: 2.5vw; 
     min-height: 10vw;
     /* hyphens: auto; */
-}
-
-.seccion-respuestas {
-    width: 80%;
-    margin-top: 2vh;
-    font-family: 'Poppins', sans-serif;
-    font-size: 2vw;
-    font-weight: 500;
-    font-style: italic;
-    display: block;
-}
-
-.respuesta-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.seccion-respuestas .respuesta-container {
-    border-radius: 0.5vw;
-    background-color: #838383;
-    color: #838383;
-}
-
-.respuesta-descubierta .respuesta-container {
-    background-color: transparent;
-    color: white;
-}
-
-.respuesta-container::after {
-    content: "Haz click para descubrir la respuesta";
-    color: white;
-    position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
-    width: 40%; /* Need a specific value to work */
-    text-align: center;
-}
-
-.respuesta-descubierta .respuesta-container::after {
-    content: "";
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
@@ -114,19 +69,6 @@
     .jugador-cara{
         width: 15vw;
         height: 15vw;
-    }
-
-    .seccion-respuestas {
-        font-size: 4vw;
-    }
-
-    .seccion-respuestas .respuesta-container {
-        border-radius: 1.5vw;
-    }
-
-    .respuesta-container::after {
-        font-size: 4vw;
-        width: 80%;
     }
 }
 
@@ -148,18 +90,5 @@
     .jugador-cara{
         width: 15vw;
         height: 15vw;
-    }
-
-    .seccion-respuestas {
-        font-size: 4vw;
-    }
-
-    .seccion-respuestas .respuesta-container {
-        border-radius: 1.5vw;
-    }
-
-    .respuesta-container::after {
-        font-size: 4vw;
-        width: 80%;
     }
 }
