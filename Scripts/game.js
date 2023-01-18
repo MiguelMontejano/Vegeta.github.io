@@ -2,6 +2,8 @@
 const cuerpoApp = document.getElementById("cuerpo-app");
 const zonaNombre = document.getElementById("texto-nombre");
 const zonaTexto = document.getElementById("texto-juego");
+const zonaRespuesta = document.getElementById("respuesta-cultura");
+const respuestaContainer = document.getElementById("respuesta-id");
 
 const rondasPorPartida = 35;//Establece el numero de rondas que se juegan por partida
 const tiposPruebas = 8;//Esta variable nos indica cuantos tipos diferentes de pruebas existen en el juego
@@ -358,48 +360,49 @@ let preguntas = ["¿Qué es lo último de lo que te arrepientes? Tienes la oport
 "Si te abrieses Onlyfans ¿Qué precio pondrías teniendo en cuenta que subirías fotos desnudo/a? Si alguno de los presentes pagaría por verte que beba 1 trago"
 ];
 
-let cultura = ["Número de habitantes en el lugar en el pueblo/ciudad en el que vives, si te acercas 1.000.000 arriba o abajo te libras de beber si no bebe 3",
-"Cita los elementos de la primera columna empezando por la izquierda de la tabla periódica, si te lo sabes reparte 5, si no te lo sabes bebe 2",
-"¿A qué elemento corresponde el símbolo K?, si lo sabes reparte 6",
-"¿En qué año llegó Cristóbal Colón a América?, si fallas bebes 3",
-"Nombra 5 superhéroes, si fallas bebes un trago por cada uno que no hayas sabido decir",
-"¿Cuál es la edad media de los habitantes de España (2 años arriba/abajo)? Si aciertas repartes 3, si no te los bebes",
-"¿Cuántos mundiales posee la selección argentina? Si aciertas reparte 2 tragos si no los bebes",
-"¿Qué significan las siglas FIFA?, si no lo sabes deberás beber 4 tragos",
-"¿En que se especializa la cartografía?, bebe 2 tragos si fallas y 4 si te ha costado hasta entender la palabra",
-"¿Cuál es el país más extenso del mundo?, si aciertas reparte 3 tragos",
-"¿Cuál es el nombre del himno nacional Francés?, reparte 4 tragos si aciertas o bebe 1 si fallas",
-"¿Qué es más pequeño, un átomo o una molécula?, 3 tragos en juego",
-"¿A qué país pertenece la ciudad de Varsovia?, si aciertas no beberás 2",
-"¿Cuál es el hogar de los dioses nórdicos? Si aciertas repartes 2. \nPISTA: Thor, Vengadores...",
-"¿Cuál es el equipo con más champions? Reparte 2 tragos si aciertas",
-"¿Cómo se llama el fundador de Zara? Si fallas bebes 1.",
-"¿Cuál es la capital de Islandia? Reparte 5 si sabes la respuesta",
-"¿De qué año a qué año transcurrió la Segunda Guerra Mundial?, si aciertas reparte 1, si fallas bébelo",
-"¿Quién es el autor del cuadro La Última Cena?",
-"¿Cuál es el océano más grande de La Tierra?, 2 tragos en juego",
-"¿Cuántos colores tiene la bandera de Bulgaria? Si has acertado reparte 3",
-"¿Cuántos colores tiene la bandera de Chile? Si has acertado reparte 3",
-"¿Cuál es el río más largo del mundo? Si has fallado bebe 2",
-"¿A qué compositor clásico pertenecen los nocturnos para piano? Si aciertas reparte 2",
-"Ordena estos sucesos cronológicamente: Ataque a Pearl Harbor, Caída estrepitosa de Wall Street, Toma de Francia por parte de Htiler, Guerra de Vietnam. reparte 4 si aciertas.",
-"¿Cuántos estados tiene integrados Estados Unidos? Si respondes bien reparte 4",
-"¿Cuántos años duró la guerra de los 100 años? Si fallas bebes 1, si respondes bien reparte 3",
-"¿Cuál fue la primera película que apareció de Disney? Si respondes bien reparte 3",
-"¿Quién promulgó la frase Hoy Dios ha muerto? Reparte 2 si lo aciertas",
-"Quién separó en dos las aguas en la biblia. Bebe 2 si fallas para rellenas tus mares.",
-"¿Cuál es el edificio más alto del mundo? 2 tragos a repartir si aciertas",
-"Cita una de las tres películas con más premios Óscar de la historia o bebe 2 tragos.\nPISTA: 11 Óscars",
-"¿Cuál de estas no es una de las siete maravillas del mundo moderno? Coliseo Romano, Petra, Faro de Alejandría, Taj Mahal. Si fallas bebes 2.",
-"¿Cuál es el planeta más grande del Sistema Solar? Si fallas bebe 2 tragos gigantes como planetas.",
-"¿Cuál es el animal representado en la Vara de Asclepio/Esculapio. Símbolo de la medicina? 3 tragos que repartes si aciertas galeno.",
-"¿Cuál es la película más taquillera de la historia? Reparte 4 si aciertas.",
-"¿Cuántas notas musicales existen? Bebe 1 si has fallado.",
-"Ordena estás películas de menos a más premios Óscar: Star Wars: Episodio IV. - La La Land - Mary Poppins - Ben Hur. Si aciertas repartirás 4 tragos",
-"Ordena estás películas de menos a más premios Óscar: Braveheart. - Algunos Hombres Buenos - El silencio de los corderos - El Padrino: parte II. Si fallas bebe 1 y si aciertas reparte 4.",
-"Estos personajes pertenecen a una de las siguientes categorías (Deporte, Medicina, Arte Clásico, Cine). Clasifícalos de manera correcta y reparte tantos tragos como aciertos hayas tenido: Louis Pasteur, Idris Elba, Sean Penn, Tiziano, Ciro Immobile.",
-"Estos personajes pertenecen a una de las siguientes categorías (Deporte, Medicina, Arte Clásico, Cine). Clasifícalos de manera correcta y reparte tantos tragos como aciertos hayas tenido: Andrew Robertson, Hipócrates, James Stewart, Sigmund Freud, El Greco.",
-"Cuál es el nombre del autor español de las obras La casa de Bernarda Alba y Bodas de Sangre que murió fusilado tras la Guerra Civil Española. reparte 3 si lo aciertas."
+let cultura = [
+{question: "Número de habitantes de Grecia, si te acercas 1.000.000 arriba o abajo te libras de beber si no bebe 3", answer: "10,64 millones (2021)"},
+{question: "Cita los elementos de la primera columna empezando por la izquierda de la tabla periódica, si te lo sabes reparte 5, si no te lo sabes bebe 2", answer: "Litio (Li), Sodio (Na), Potasio (K), Rubidio (Rb), Cesio (Cs) y Francio (Fr)"},
+{question: "¿A qué elemento corresponde el símbolo K?, si lo sabes reparte 6", answer: "Potasio"},
+{question: "¿En qué año llegó Cristóbal Colón a América?, si fallas bebes 3", answer: "En el año 1492"},
+{question: "Nombra 5 superhéroes, si fallas bebes un trago por cada uno que no hayas sabido decir", answer: "Ejemplos: Spider-Man, Iron-Man, Hulk, Thor, Batman, Superman, Flash..."},
+{question: "¿Cuál es la edad media de los habitantes de España (2 años arriba/abajo)? Si aciertas repartes 3, si no te los bebes", answer: "44.1 años a 1 de enero de 2022"},
+{question: "¿Cuántos mundiales posee la selección argentina? Si aciertas reparte 2 tragos si no los bebes", answer: "3 mundiales"},
+{question: "¿Qué significan las siglas FIFA?, si no lo sabes deberás beber 4 tragos", answer: "Fédération Internationale de Football Association"},
+{question: "¿En que se especializa la cartografía?, bebe 2 tragos si fallas y 4 si te ha costado hasta entender la palabra", answer: "La cartografía es la ciencia encargada de estudiar y elaborar mapas"},
+{question: "¿Cuál es el país más extenso del mundo?, si aciertas reparte 3 tragos", answer: "Rusia"},
+{question: "¿Cuál es el nombre del himno nacional Francés?, reparte 4 tragos si aciertas o bebe 1 si fallas", answer: "La Marsellesa"},
+{question: "¿Qué es más pequeño, un átomo o una molécula?, 3 tragos en juego", answer: "La molécula es más pequeña"},
+{question: "¿A qué país pertenece la ciudad de Varsovia?, si aciertas no beberás 2", answer: "Varsovia es la capital de Polonia"},
+{question: "¿Cuál es el hogar de los dioses nórdicos? Si aciertas repartes 2. \nPISTA: Thor, Vengadores...", answer: "Asgard"},
+{question: "¿Cuál es el equipo con más champions? Reparte 2 tragos si aciertas", answer: "Real Madrid C.F. con 14 champions"},
+{question: "¿Cómo se llama el fundador de Zara? Si fallas bebes 1.", answer: "Amancio Ortega"},
+{question: "¿Cuál es la capital de Islandia? Reparte 5 si sabes la respuesta", answer: "Reikiavik"},
+{question: "¿De qué año a qué año transcurrió la Segunda Guerra Mundial?, si aciertas reparte 1, si fallas bébelo", answer: "1 sept 1939 – 2 sept 1945"},
+{question: "¿Quién es el autor del cuadro La Última Cena?", answer: "Leonardo Da Vinci"},
+{question: "¿Cuál es el océano más grande de La Tierra?, 2 tragos en juego", answer: "El océano Pacífico"},
+{question: "¿Cuántos colores tiene la bandera de Bulgaria? Si has acertado reparte 3", answer: "3 colores (blanco, verde y rojo)"},
+{question: "¿Cuántos colores tiene la bandera de Chile? Si has acertado reparte 3", answer: "3 colores (azul, blanco y rojo)"},
+{question: "¿Cuál es el río más largo del mundo? Si has fallado bebe 2", answer: "Amazonas"},
+{question: "¿A qué compositor clásico pertenecen los nocturnos para piano? Si aciertas reparte 2", answer: "Frédéric Chopin"},
+{question: "Ordena estos sucesos cronológicamente: Ataque a Pearl Harbor, Caída estrepitosa de Wall Street, Toma de Francia por parte de Htiler, Guerra de Vietnam. reparte 4 si aciertas.", answer: "Caida de Wall Street (1929) - Toma de Francia (1940) - Ataque Pearl Harbor (1941) - Guerra de Vietnam (1955)"},
+{question: "¿Cuántos estados tiene integrados Estados Unidos? Si respondes bien reparte 4", answer: "Hay 50 estados en EEUU"},
+{question: "¿Cuántos años duró la guerra de los 100 años? Si fallas bebes 1, si respondes bien reparte 3", answer: "116 años"},
+{question: "¿Cuál fue la primera película que apareció de Disney? Si respondes bien reparte 3", answer: "Blancanieves"},
+{question: "¿Quién promulgó la frase Hoy Dios ha muerto? Reparte 2 si lo aciertas", answer: "Friedrich Nietzsche"},
+{question: "Quién separó en dos las aguas en la biblia. Bebe 2 si fallas para rellenas tus mares.", answer: "Moisés"},
+{question: "¿Cuál es el edificio más alto del mundo? 2 tragos a repartir si aciertas", answer: "Burj Khalifa"},
+{question: "Cita una de las tres películas con más premios Óscar de la historia o bebe 2 tragos.\nPISTA: 11 Óscars", answer: "Titanic, Ben-Hur y El Señor de los Anillos: el retorno del Rey"},
+{question: "¿Cuál de estas no es una de las siete maravillas del mundo moderno? Coliseo Romano, Petra, Faro de Alejandría, Taj Mahal. Si fallas bebes 2.", answer: "El faro de Alejandría no pertenece al mundo moderno"},
+{question: "¿Cuál es el planeta más grande del Sistema Solar? Si fallas bebe 2 tragos gigantes como planetas.", answer: "Júpiter"},
+{question: "¿Cuál es el animal representado en la Vara de Asclepio/Esculapio. Símbolo de la medicina? 3 tragos que repartes si aciertas galeno.", answer: "La Serpiente"},
+{question: "¿Cuál es la película más taquillera de la historia? Reparte 4 si aciertas.", answer: "Avatar"},
+{question: "¿Cuántas notas musicales existen? Bebe 1 si has fallado.", answer: "7 notas básicas (12 si contamos las alteraciones)"},
+{question: "Ordena estás películas de menos a más premios Óscar: Star Wars: Episodio IV. - La La Land - Mary Poppins - Ben Hur. Si aciertas repartirás 4 tragos", answer: "Mary Poppins (5 Oscars) La La Land (6 Oscars) Star Wars: Episodio IV (7 Oscars), Ben-Hur (11 Oscars)"},
+{question: "Ordena estás películas de menos a más premios Óscar: Braveheart. - Algunos Hombres Buenos - El silencio de los corderos - El Padrino: parte II. Si fallas bebe 1 y si aciertas reparte 4.", answer: "Algunos Hombres Buenos (0 Oscars) - Braveheart (5 Oscars) - El Silencio de los Corderos (5 Oscars) - El Padrino: Parte II (6 Oscars)"},
+{question: "Estos personajes pertenecen a una de las siguientes categorías (Deporte, Medicina, Arte Clásico, Cine). Clasifícalos de manera correcta y reparte tantos tragos como aciertos hayas tenido: Louis Pasteur, Idris Elba, Sean Penn, Tiziano, Ciro Immobile.", answer: "Louis Pasteur (Medicina), Idris Elba (Cine), Sean Penn (Cine), Tiziano (Arte clásico), Ciro Immobile (Deporte)"},
+{question: "Estos personajes pertenecen a una de las siguientes categorías (Deporte, Medicina, Arte Clásico, Cine). Clasifícalos de manera correcta y reparte tantos tragos como aciertos hayas tenido: Andrew Robertson, Hipócrates, James Stewart, Sigmund Freud, El Greco.", answer: "Andrew Robertson (Deporte), Hipócrates (Medicina), James Stewart (Cine), Sigmund Freud (Medicina), El Greco (Arte clásico)"},
+{question: "Cuál es el nombre del autor español de las obras La casa de Bernarda Alba y Bodas de Sangre que murió fusilado tras la Guerra Civil Española. reparte 3 si lo aciertas.", answer: "Federico García Lorca"}
 ];
 
 let beberxbeber = ["Reparte 5 tragos si eres el que  siempre lleva a la gente de tu grupo en coche", 
@@ -475,6 +478,7 @@ const siguienteRonda = () => {
 
     zonaNombre.innerHTML = '';
     zonaTexto.innerHTML = ''; //Siempre que trabajamos con innerHtml tenemos que empezar con el string vacio
+    zonaRespuesta.innerHTML = '';
     
     if(contadorRondas <= rondasPorPartida) {
         if (MODO_CALIENTE === 'activado') {
@@ -839,11 +843,15 @@ const siguienteRonda = () => {
                 if(contadorCultura <= 2){ 
                     contadorRondas++; //Sumo uno al contador de rondas
                     contadorCultura++;
+
+                    zonaRespuesta.classList.remove("respuesta-descubierta"); //elimino la clase descubierta si la hay en la respuesta para que no se me muestren todas una vez se ha mostrado la primera
+
                     let objetoRonda = seleccionarJugador(1);
                     let jugadorRonda = objetoRonda.jugador
                     let personaje = objetoRonda.personaje
                     let randomCultura = Math.floor(Math.random()*cultura.length);
-                    let juegoRonda = cultura[randomCultura];
+                    let juegoRonda = cultura[randomCultura].question;
+                    let respuestaRonda = cultura[randomCultura].answer;
 
                     document.body.style.backgroundColor = "#0068c9";
                 
@@ -855,6 +863,8 @@ const siguienteRonda = () => {
                     zonaTexto.innerHTML += `<div class="seccion-texto" id="texto-juego">
                     <div>${juegoRonda}</div>
                     </div>`
+
+                    zonaRespuesta.innerHTML += `<div class="respuesta-container" id="respuesta-id">Respuesta: ${respuestaRonda}</div>`
         
                     cultura.splice(randomCultura, 1);//Para que en una misma partida no salga dos veces la misma prueba
                 }
@@ -917,10 +927,17 @@ const seleccionarJugador = (numeroJugadores) => {//Esta funcion selecciona tanto
     }
 }
 
+const descubrirRespuesta = () => {
+    zonaRespuesta.classList.add("respuesta-descubierta");
+}
+
 //Event Listener
 document.addEventListener('DOMContentLoaded', leerDB) //Este evento se genera cuando el DOM esta cargado
 
-cuerpoApp.addEventListener('click', siguienteRonda);
+zonaNombre.addEventListener('click', siguienteRonda);
+zonaTexto.addEventListener('click', siguienteRonda);
+
+zonaRespuesta.addEventListener('click', descubrirRespuesta);
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){ //Espacio
