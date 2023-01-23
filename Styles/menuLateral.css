@@ -60,6 +60,7 @@
     font-weight: 600;
     border-radius: 0 1vw 1vw 0;
     padding: 1vw;
+    cursor: pointer;
 }
 
 .item-menu-opener-text {
@@ -125,6 +126,7 @@
     font-size: 3vw;
     background-color: rgb(75, 75, 75);
     color: white;
+    cursor: pointer;
 }
 
 .dice-roll-btn {
@@ -140,10 +142,78 @@
     .menu-lateral a, .menu-lateral .closebtn {
         font-size: 3vw;
     }
+
+    .item-menu-opener {
+        width: 20vw;
+        margin-top: 4vh;
+        column-gap: 1vw;
+        font-size: 3.2vw;
+        border-radius: 0 1vw 1vw 0;
+        padding: 1vw;
+    }
+
+    .menu-items {
+        /*el width y el padding se lo ponemos desde el .js*/
+        height: 20vh;
+        column-gap: 1vw;
+        border-radius: 0 1vw 1vw 0;
+    }
+
+    .menu-items img {
+        width: 13vw;
+    } 
+
+    .dice-roll-btn {
+        padding: .7vw;
+        border-radius: .4vw;
+        font-size: 3vw;
+    }
+
+    .items-menu-closer {
+        width: 6vw;
+        height: 6vw;
+        padding-right: 0.2vw;
+        border-radius: 50%;
+        font-size: 4vw;
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px){
     .menu-lateral a, .menu-lateral .closebtn {
         font-size: 2.5vh;
+    }
+
+    .item-menu-opener {
+        width: 20vw;
+        margin-top: 4vh;
+        column-gap: 1vw;
+        font-size: 3.2vw;
+        border-radius: 0 1vw 1vw 0;
+        padding: 1vw;
+    }
+
+    .menu-items {
+        /*el width y el padding se lo ponemos desde el .js*/
+        height: 20vh;
+        column-gap: 1vw;
+        border-radius: 0 1vw 1vw 0;
+    }
+
+    .menu-items img {
+        width: 12vw;
+    } 
+
+    .dice-roll-btn {
+        padding: .7vw;
+        border-radius: .4vw;
+        font-size: 2.8vw;
+    }
+
+    .items-menu-closer {
+        width: 6vw;
+        height: 6vw;
+        padding-right: 0.2vw;
+        border-radius: 50%;
+        font-size: 4vw;
     }
 }
