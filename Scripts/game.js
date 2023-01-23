@@ -36,8 +36,15 @@ let contadorCaliente = 0;
 
 let arrayJugadores = [];
 const MODO_CALIENTE = localStorage.getItem('caliente');
-console.log('loggeo lo que cojo del local storage caliente ', MODO_CALIENTE);
 
+const diceImages = [
+    "../Images/dice/dice-01.svg",
+    "../Images/dice/dice-02.svg",
+    "../Images/dice/dice-03.svg",
+    "../Images/dice/dice-04.svg",
+    "../Images/dice/dice-05.svg",
+    "../Images/dice/dice-06.svg",
+]
 
 let pruebas = ["Di un recuerdo con cada uno de los aquí presentes y brinda por los buenos momentos", 
 "Bebe el máximo de suspensos que hayas tenido, si es ninguno te solidarizas y bebes con el que más suspensos tiene", 
@@ -943,6 +950,17 @@ const seleccionarJugador = (numeroJugadores) => {//Esta funcion selecciona tanto
 
 const descubrirRespuesta = () => {
     zonaRespuesta.classList.add("respuesta-descubierta");
+}
+
+const lanzarDado = () => {
+    const diceNumber = Math.floor(Math.random() * 6);
+
+    document.getElementById("dado-img").classList.add("dice-shaking");
+    setTimeout(function(){
+        document.getElementById("dado-img").classList.remove("dice-shaking");
+    }, 500);
+
+    document.getElementById("dado-img").setAttribute("src", diceImages[diceNumber]);
 }
 
 //Event Listener
