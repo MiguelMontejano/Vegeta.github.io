@@ -1,4 +1,4 @@
-.menu-lateral{
+.menu-lateral, .menu-items{
     height: 100%;
     width: 0; /*Lo cambiaremos con Javascript para hacer que aparezca*/
     display: flex;
@@ -47,14 +47,173 @@
     color: var(--color-rosado);
 }
 
+/*ITEMS MENU*/
+.item-menu-opener {
+    width: 11.4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1vw;
+    background-color: rgb(68, 68, 68);
+    font-size: 2vw;
+    color: white;
+    font-weight: 600;
+    border-radius: 0 1vw 1vw 0;
+    padding: 1vw;
+    cursor: pointer;
+}
+
+.item-menu-opener-text {
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-items {
+    /*el width y el padding se lo ponemos desde el .js*/
+    top: 6vh;
+    height: 20vh;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1vw;
+    border-radius: 0 1vw 1vw 0;
+}
+
+.menu-items img{
+    width: 6.8vw;
+}
+
+.dice-shaking {
+    animation: shake .4s infinite ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(8deg);
+    }
+    50% {
+        transform: rotate(-8deg);
+    }
+    100% {
+        transform: rotate(8deg);
+    }
+}
+
+.items-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1vh;
+    margin: 1vh 0 0 2vw;
+}
+
+.items-menu-closer {
+    width: 4vw;
+    height: 4vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0.2vw;
+    border-radius: 50%;
+    font-size: 3vw;
+    background-color: rgb(75, 75, 75);
+    color: white;
+    cursor: pointer;
+}
+
+.dice-roll-btn {
+    background-color: white;
+    color: black;
+    padding: .7vw;
+    border-radius: .4vw;
+    font-size: 1.5vw;
+}
+/*ITEMS MENU*/
+
 @media (min-width: 0px) and (max-width: 768px) {
     .menu-lateral a, .menu-lateral .closebtn {
         font-size: 3vw;
     }
+
+    .item-menu-opener {
+        width: 20vw;
+        margin-top: 4vh;
+        column-gap: 1vw;
+        font-size: 3.2vw;
+        border-radius: 0 1vw 1vw 0;
+        padding: 1vw;
+    }
+
+    .menu-items {
+        /*el width y el padding se lo ponemos desde el .js*/
+        height: 20vh;
+        column-gap: 1vw;
+        border-radius: 0 1vw 1vw 0;
+    }
+
+    .menu-items img {
+        width: 13vw;
+    } 
+
+    .dice-roll-btn {
+        padding: .7vw;
+        border-radius: .4vw;
+        font-size: 3vw;
+    }
+
+    .items-menu-closer {
+        width: 6vw;
+        height: 6vw;
+        padding-right: 0.2vw;
+        border-radius: 50%;
+        font-size: 4vw;
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px){
     .menu-lateral a, .menu-lateral .closebtn {
         font-size: 2.5vh;
+    }
+
+    .item-menu-opener {
+        width: 20vw;
+        margin-top: 4vh;
+        column-gap: 1vw;
+        font-size: 3.2vw;
+        border-radius: 0 1vw 1vw 0;
+        padding: 1vw;
+    }
+
+    .menu-items {
+        /*el width y el padding se lo ponemos desde el .js*/
+        height: 20vh;
+        column-gap: 1vw;
+        border-radius: 0 1vw 1vw 0;
+    }
+
+    .menu-items img {
+        width: 12vw;
+    } 
+
+    .dice-roll-btn {
+        padding: .7vw;
+        border-radius: .4vw;
+        font-size: 2.8vw;
+    }
+
+    .items-menu-closer {
+        width: 6vw;
+        height: 6vw;
+        padding-right: 0.2vw;
+        border-radius: 50%;
+        font-size: 4vw;
     }
 }
